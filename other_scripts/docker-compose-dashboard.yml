@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+
+  dashboard:
+    image: pg_inv_dashboard
+    restart: always
+    environment:
+      PORT: 80
+      PGUSER: postgres
+      PGDATABASE: postgres
+      PGPASSWORD: postgres
+      PGHOST: postgres
+      PGPORT: 5432
+    ports:
+      - "8080:80"

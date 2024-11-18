@@ -1,0 +1,225 @@
+-----------------------------------
+-- AUTHOR:	Dustin Schulz, ORDIX AG
+-- DATE:	19.10.2022
+-- VERSION:	1.0
+-- PURPOSE:	Represents the raw JSON data (regardless of the data source) in a unified temporary table
+-----------------------------------
+
+create schema if not exists data_processing_pkg;
+set search_path = 'data_processing_pkg';
+
+CREATE OR REPLACE procedure data_processing_pkg.provide_json_elements (p_name text) AS $body$
+declare
+	v_rec record;
+begin
+	drop table if exists temp_json_elements;
+    
+    if p_name = 'instances' then -- ask for data source
+        CREATE TEMP TABLE temp_json_elements AS
+        with difference as ( -- select all and subtract the records that have already been processed
+            select a.instance_name, a.project, a.scan_date
+            from instance_infos.json_data a
+            where (inconsistent != TRUE or inconsistent is null) -- filter out records marked as inconsistent
+            except
+            select a.instance_name, a.project, a.scan_date
+            from instance_infos.json_data a, instance_infos.sql_instances b
+            where a.scan_date = b.scan_date
+            and a.instance_name = b.instance_name
+            and a.project = b.project
+        )
+        select a.instance_name, a.project, a.scan_date, a.json -- now additionally select the JSON
+        from instance_infos.json_data a, difference b
+        where a.scan_date = b.scan_date
+        and a.instance_name = b.instance_name
+        and a.project = b.project;
+
+        -- check for inconsistent inserts
+		for v_rec in
+			select *
+			from temp_json_elements
+			where instance_name != json ->> 'name' -- this is inconsistent
+			or project != json ->> 'project' -- this is inconsistent
+		loop	
+			-- insert into log
+			insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values (
+				'WARNING', 'instance_infos.json_data',
+			 	E'The following line is incorrect and cannot be processed. (The columns do not match the json) \n' ||
+				E'\ninstance_name: ' || v_rec.instance_name ||
+				E'\nproject: ' || v_rec.project ||
+				E'\nscan_date: ' || v_rec.scan_date ||
+				E'\njson: ' || v_rec.json,
+				v_rec.scan_date, current_timestamp);
+		
+            -- mark as inconsistent
+			update instance_infos.json_data
+				set inconsistent = TRUE
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+				and scan_date = v_rec.scan_date;
+
+            -- delete from temp_json_elements
+			delete from temp_json_elements
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+				and scan_date = v_rec.scan_date;
+		end loop;
+            
+	elsif p_name = 'applications' then -- ask for data source
+        CREATE TEMP TABLE temp_json_elements AS
+        with difference as ( -- select all and subtract the records that have already been processed
+            select a.product_nr, a.scan_date
+            from application_infos.json_data a
+            where (inconsistent != TRUE or inconsistent is null) -- filter out records marked as inconsistent
+            except
+            select a.product_nr, a.scan_date
+            from application_infos.json_data a, application_infos.appl_info b
+            where a.scan_date = b.scan_date
+            and a.product_nr = b.product_nr
+        )
+        select a.product_nr, a.scan_date, a.json -- now additionally select the JSON
+        from application_infos.json_data a, difference b
+        where a.scan_date = b.scan_date
+        and a.product_nr = b.product_nr;
+
+        -- check for inconsistent inserts
+		for v_rec in
+			select *
+			from temp_json_elements
+			where product_nr != json ->> 'id'
+		loop	
+			-- insert into log
+			insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values (
+				'WARNING', 'application_infos.json_data',
+			 	E'The following line is incorrect and cannot be processed. (The columns do not match the json) \n' ||
+				E'\nproduct_nr: ' || v_rec.product_nr ||
+				E'\nscan_date: ' || v_rec.scan_date ||
+				E'\njson: ' || v_rec.json,
+				v_rec.scan_date, current_timestamp);
+		
+            -- mark as inconsistent
+			update application_infos.json_data
+				set inconsistent = TRUE
+				where product_nr = v_rec.product_nr
+				and scan_date = v_rec.scan_date;
+
+            -- delete from temp_json_elements
+			delete from temp_json_elements
+				where product_nr = v_rec.product_nr
+				and scan_date = v_rec.scan_date;
+		end loop;
+
+	elsif p_name = 'databases' then -- ask for data source
+        CREATE TEMP TABLE temp_json_elements AS
+        with difference as ( -- select all and subtract the records that have already been processed
+            select a.instance_name, a.database_name, a.project, a.scan_date
+            from detail_infos.json_data_databases a
+            where (inconsistent != TRUE or inconsistent is null) -- filter out records marked as inconsistent
+            except
+            select a.instance_name, a.database_name, a.project, a.scan_date
+            from detail_infos.json_data_databases a, detail_infos.sql_databases b
+            where a.scan_date = b.scan_date
+            and a.instance_name = b.instance_name
+			and a.database_name = b.database_name
+            and a.project = b.project
+        )
+        select a.instance_name, a.database_name, a.project, a.scan_date, a.json -- now additionally select the JSON
+        from detail_infos.json_data_databases a, difference b
+        where a.scan_date = b.scan_date
+        and a.instance_name = b.instance_name
+		and a.database_name = b.database_name
+        and a.project = b.project;
+
+        -- check for inconsistent inserts
+		for v_rec in
+			select *
+			from temp_json_elements
+			where instance_name != json ->> 'instance'
+			or project != json ->> 'project'
+            or database_name != json ->> 'name'
+		loop	
+			-- insert into log
+			insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values (
+				'WARNING', 'detail_infos.json_data_databases',
+			 	E'The following line is incorrect and cannot be processed. (The columns do not match the json) \n' ||
+				E'\ninstance_name: ' || v_rec.instance_name ||
+				E'\nproject: ' || v_rec.project ||
+                E'\ndatabase_name: ' || v_rec.database_name ||
+				E'\nscan_date: ' || v_rec.scan_date ||
+				E'\njson: ' || v_rec.json,
+				v_rec.scan_date, current_timestamp);
+		
+            -- mark as inconsistent
+			update detail_infos.json_data_databases
+				set inconsistent = TRUE
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+                and database_name = v_rec.database_name
+				and scan_date = v_rec.scan_date;
+
+            -- delete from temp_json_elements
+			delete from temp_json_elements
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+                and database_name = v_rec.database_name
+				and scan_date = v_rec.scan_date;
+		end loop;
+		
+	elsif p_name = 'users' then -- ask for data source
+        CREATE TEMP TABLE temp_json_elements AS
+        with difference as ( -- select all and subtract the records that have already been processed
+            select a.instance_name, a.user_name, a.project, a.scan_date
+            from detail_infos.json_data_users a
+            where (inconsistent != TRUE or inconsistent is null) -- filter out records marked as inconsistent
+            except
+            select a.instance_name, a.user_name, a.project, a.scan_date
+            from detail_infos.json_data_users a, detail_infos.sql_users b
+            where a.scan_date = b.scan_date
+            and a.instance_name = b.instance_name
+			and a.user_name = b.user_name
+            and a.project = b.project
+        )
+        select a.instance_name, a.user_name, a.project, a.scan_date, a.json -- now additionally select the JSON
+        from detail_infos.json_data_users a, difference b
+        where a.scan_date = b.scan_date
+        and a.instance_name = b.instance_name
+		and a.user_name = b.user_name
+        and a.project = b.project;
+
+        -- check for inconsistent inserts
+		for v_rec in
+			select *
+			from temp_json_elements
+			where instance_name != json ->> 'instance'
+			or project != json ->> 'project'
+            or user_name != json ->> 'name'
+		loop	
+			-- insert into log
+			insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values (
+				'WARNING', 'detail_infos.json_data_users',
+			 	E'The following line is incorrect and cannot be processed. (The columns do not match the json) \n' ||
+				E'\ninstance_name: ' || v_rec.instance_name ||
+				E'\nproject: ' || v_rec.project ||
+                E'\nuser_name: ' || v_rec.user_name ||
+				E'\nscan_date: ' || v_rec.scan_date ||
+				E'\njson: ' || v_rec.json,
+				v_rec.scan_date, current_timestamp);
+		
+            -- mark as inconsistent
+			update detail_infos.json_data_users
+				set inconsistent = TRUE
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+                and user_name = v_rec.user_name
+				and scan_date = v_rec.scan_date;
+
+            -- delete from temp_json_elements
+			delete from temp_json_elements
+				where instance_name = v_rec.instance_name
+				and project = v_rec.project
+                and user_name = v_rec.user_name
+				and scan_date = v_rec.scan_date;
+		end loop;
+	end if;
+end; $body$
+LANGUAGE PLPGSQL;
+END;

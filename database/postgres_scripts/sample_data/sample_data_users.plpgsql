@@ -1,0 +1,25 @@
+ insert into detail_infos.json_data_users (json, scan_date, instance_name, user_name, project) values 
+( '{
+    "etag": "d3892f398ed284ed23139fe4310a26b8ba90da4f6cb84cf8d04b27538f880394",
+    "host": "",
+    "instance": "pg-01-42-73-dks-blue-dev-01",
+    "kind": "sql#user",
+    "name": "admin2fa",
+    "project": "tecfo-psql-blue-dev-2397"
+  }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'admin2fa', 'tecfo-psql-blue-dev-2397'),
+( '{
+    "etag": "6f31cccabe17f21c7ddfd0413d093e08bc43f7c6c2f22232da248aaf93910a69",
+    "host": "",
+    "instance": "pg-01-42-73-dks-blue-dev-01",
+    "kind": "sql#user",
+    "name": "app2fa",
+    "project": "tecfo-psql-blue-dev-2397"
+  }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'app2fa', 'tecfo-psql-blue-dev-2397'),
+( '{
+    "etag": "d2e6be5e268ec839151dccc3ca151498a3836a433831d6103b16d0c7611080fe",
+    "host": "",
+    "instance": "pg-01-42-73-dks-blue-dev-01",
+    "kind": "sql#user",
+    "name": "postgres",
+    "project": "tecfo-psql-blue-dev-2397"
+  }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'postgres', 'tecfo-psql-blue-dev-2397');

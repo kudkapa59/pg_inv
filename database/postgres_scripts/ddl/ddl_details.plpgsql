@@ -1,0 +1,96 @@
+create schema if not exists detail_infos;
+set search_path = 'detail_infos';
+
+drop table if exists json_data_databases cascade;
+create table json_data_databases (
+	project text,
+    instance_name text,
+	database_name text,
+	json json,
+	scan_date timestamp,
+    inconsistent boolean
+);
+alter table json_data_databases add primary key (project, instance_name, database_name, scan_date);
+
+drop table if exists json_data_users cascade;
+create table json_data_users (
+	project text,
+    instance_name text,
+	user_name text,
+	json json,
+	scan_date timestamp,
+    inconsistent boolean
+);
+alter table json_data_users add primary key (project, instance_name, user_name, scan_date);
+
+drop table if exists sql_databases cascade;
+create table sql_databases (
+	instance_name text,
+	database_name text,
+	project text,
+	etag text,
+	charset text,
+	collation_setting text,
+	selflink text,
+	scan_date timestamp
+);
+alter table sql_databases add primary key (project, instance_name, database_name, scan_date);
+
+drop table if exists sql_users cascade;
+create table sql_users (
+	instance_name text,
+	user_name text,
+	project text,
+	host text,
+	etag text,
+	type text,
+	kind text,
+	scan_date timestamp
+);
+alter table sql_users add primary key (project, instance_name, user_name, scan_date);
+
+create or replace view sql_databases_latest as
+	with latest as (
+		select instance_name, project, database_name, max(scan_date) as max_scan_date
+		from sql_databases
+        WHERE scan_date = (select max(scan_date) from sql_databases sd_inner
+                           where sd_inner.instance_name = sql_databases.instance_name
+						   and sd_inner.project = sql_databases.project)
+		group by instance_name, project, database_name)
+	select sd.*
+	from sql_databases sd, latest l
+	where sd.instance_name = l.instance_name
+	and sd.project = l.project
+    and sd.database_name = l.database_name
+	and sd.scan_date = l.max_scan_date;
+
+create or replace view sql_users_latest as
+	with latest as (
+		select instance_name, project, user_name, max(scan_date) as max_scan_date
+		from sql_users
+        WHERE scan_date = (select max(scan_date) from sql_users su_inner
+                           where su_inner.instance_name = sql_users.instance_name
+						   and su_inner.project = sql_users.project)
+		group by instance_name, project, user_name)
+	select su.*
+	from sql_users su, latest l
+	where su.instance_name = l.instance_name
+	and su.project = l.project
+    and su.user_name = l.user_name
+	and su.scan_date = l.max_scan_date;
+
+create or replace view db_accounts as    
+    select si.instance_name as InstanceName,
+           split_part(si.project, '-', 4) as environment,
+           sd.database_name as DBName,
+           su.user_name as LoginName,
+           su.type as KindOfLogin,
+           user_labels ->> 'coba_coria' as CoriaID,
+           si.scan_date as Comments
+    from instance_infos.sql_instances_latest si,
+         detail_infos.sql_databases_latest sd,
+         detail_infos.sql_users_latest su
+    where si.instance_name = sd.instance_name
+    and	  si.project = sd.project
+    and	  si.instance_name = su.instance_name
+    and	  si.project = su.project;

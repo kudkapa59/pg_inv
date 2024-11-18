@@ -1,0 +1,20 @@
+CREATE OR REPLACE FUNCTION data_processing_pkg.fnc_trg_restructure_data() RETURNS trigger AS $body$
+    BEGIN
+        raise notice 'Parameter value at trigger function: %', TG_ARGV[0];
+        call data_processing_pkg.restructure_data(TG_ARGV[0]);
+		return null;
+    END; $body$
+LANGUAGE PLPGSQL;
+END;
+
+create TRIGGER trg_restructure_data after insert on instance_infos.json_data
+execute procedure data_processing_pkg.fnc_trg_restructure_data('instances');
+
+create TRIGGER trg_restructure_data after insert on application_infos.json_data
+execute procedure data_processing_pkg.fnc_trg_restructure_data('applications');
+
+create TRIGGER trg_restructure_data after insert on detail_infos.json_data_databases
+execute procedure data_processing_pkg.fnc_trg_restructure_data('databases');
+
+create TRIGGER trg_restructure_data after insert on detail_infos.json_data_users
+execute procedure data_processing_pkg.fnc_trg_restructure_data('users');

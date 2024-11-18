@@ -1,0 +1,12 @@
+create schema if not exists log_infos;
+set search_path = 'log_infos';
+
+drop table if exists logging cascade;
+create table logging (
+    level text,
+    affected_element text, 
+    description text,
+    scan_date timestamp,
+	timestamp timestamp
+);
+

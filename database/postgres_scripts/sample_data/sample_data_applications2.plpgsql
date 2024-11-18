@@ -1,0 +1,883 @@
+insert into application_infos.json_data (json, scan_date, product_nr) values 
+('
+{
+   "id":"99-01-01",
+   "productType":"it_product",
+   "name":"DCA Platform",
+   "alias":"Python",
+   "type":"Kaufprodukt",
+   "orgUnit":{
+      "id":2,
+      "name":"Linie",
+      "level":1,
+      "parent":{
+         "id":1,
+         "name":"Commerzbank",
+         "level":0,
+         "parent":null
+      }
+   },
+   "functionalUnit":{
+      "id":76,
+      "functionalPlacement":"Infrastruktur > IT-Services > ",
+      "name":"IT-Services",
+      "level":"ARCHITECTURE_CLUSTER",
+      "active":true,
+      "externalId":"000010",
+      "parent":{
+         "id":252,
+         "functionalPlacement":"Infrastruktur > ",
+         "name":"Infrastruktur",
+         "level":"FRAMEWORK",
+         "active":true,
+         "externalId":"000002",
+         "parent":null
+      }
+   },
+   "vendor":"BMC Software GmbH",
+   "vendorSupport":"NOT_RELEVANT",
+   "vendorSupportEndDate":null,
+   "description":"The Datacenter Automation (DCA) Platform enables Commerzbank to manage server and application lifecycle events including Server Deployment, Management, Patching, and Decomissioning, Software Lifecycle, and others, many of which are integrated in a self-service portal.",
+   "remark":"remark",
+   "applicationOperation":"Intern",
+   "firstUsedDate":"2010-10-15",
+   "actualityConfirmationDate":"2020-10-05",
+   "updateDateTime":"2018-02-03T00:00:00",
+   "version":"8.9.03.162",
+   "status":"produktiv",
+   "marketRiskRelevance":false,
+   "exportControlNumber":"5D002",
+   "algorithmicTrading":"Kein Algorithmus",
+   "creationDate":"2020-03-03",
+   "specialCostCenter":false,
+   "interfaceAbsenceConfirmed":true,
+   "epcSepaRelevant":false,
+   "responsibilities":[
+      {
+         "role":{
+            "name":"Business / Product Ownership",
+            "typeKey":"BPO",
+            "current":true
+         },
+         "comsiId":"user441",
+         "userDetails":{
+            "firstName":"Magdalena",
+            "lastName":"Pfeiffer",
+            "email":"Magdalena.Pfeiffer@commerzbank.net",
+            "department":null,
+            "phone":"+49 9123456789",
+            "mobile":null
+         },
+         "responsibilityDescription":"Product owner"
+      },
+      {
+         "role":{
+            "name":"Technical Product Manager (TPM)",
+            "typeKey":"TPM",
+            "current":true
+         },
+         "comsiId":"user442",
+         "userDetails":{
+            "firstName":"Emelie",
+            "lastName":"Hartmann",
+            "email":"Emelie.Hartmann@commerzbank.net",
+            "department":null,
+            "phone":null,
+            "mobile":"+49 9123456789"
+         },
+         "responsibilityDescription":"TPM"
+      }
+   ],
+   "criticality":{
+      "bcmClass":"weniger kritisch",
+      "rpo":"1 Woche",
+      "rto":"24 Stunden"
+   },
+   "costOwners":[
+      {
+         "id":90,
+         "name":"MSB-CB Ausland"
+      },
+      {
+         "id":82,
+         "name":"PC-RB"
+      }
+   ],
+   "userInfo":{
+      "count":"bis 5.000",
+      "numberOfUsers":null,
+      "users":"GM-F, GS-OR, PC-RB, MSB-CB Ausland, CM, GRM-CC, GS-IT, GRM-RO, PC-WM, GRM-IC",
+      "usersNormalized":[
+         {
+            "id":85,
+            "name":"GS-IT"
+         },
+         {
+            "id":84,
+            "name":"PC-WM"
+         },
+         {
+            "id":83,
+            "name":"CM"
+         },
+         {
+            "id":87,
+            "name":"GS-OR"
+         },
+         {
+            "id":88,
+            "name":"GRM-RO"
+         },
+         {
+            "id":90,
+            "name":"MSB-CB Ausland"
+         },
+         {
+            "id":91,
+            "name":"GRM-IC"
+         },
+         {
+            "id":86,
+            "name":"GRM-CC"
+         },
+         {
+            "id":89,
+            "name":"GM-F"
+         },
+         {
+            "id":82,
+            "name":"PC-RB"
+         }
+      ],
+      "region":"APAC - others, European Union - others, Germany, Hong Kong, Japan, Luxembourg, Mainland China, Russia, Singapore, United Kingdom, USA, Worldwide, other",
+      "regionNormalized":[
+         {
+            "key":"USA",
+            "name":"USA"
+         },
+         {
+            "key":"EU",
+            "name":"European Union - others"
+         },
+         {
+            "key":"SINGAPORE",
+            "name":"Singapore"
+         },
+         {
+            "key":"OTHER",
+            "name":"other"
+         },
+         {
+            "key":"JAPAN",
+            "name":"Japan"
+         },
+         {
+            "key":"GERMANY",
+            "name":"Germany"
+         },
+         {
+            "key":"WORLDWIDE",
+            "name":"Worldwide"
+         },
+         {
+            "key":"UK",
+            "name":"United Kingdom"
+         },
+         {
+            "key":"MAINLAND_CHINA",
+            "name":"Mainland China"
+         },
+         {
+            "key":"LUXEMBOURG",
+            "name":"Luxembourg"
+         },
+         {
+            "key":"HONG_KONG",
+            "name":"Hong Kong"
+         },
+         {
+            "key":"APAC",
+            "name":"APAC - others"
+         },
+         {
+            "key":"RUSSIA",
+            "name":"Russia"
+         }
+      ],
+      "regionalUserBaseOther":null,
+      "languages":[
+         
+      ],
+      "languageRemark":null
+   },
+   "flags":[
+      
+   ],
+   "outsourced":false,
+   "regulatoryApplication":false,
+   "electronicCustomerCommunication":false,
+   "recoveryTime":"168:00",
+   "recoveryClass":3,
+   "multiClient":"NO",
+   "sourceCodeUsage":false,
+   "serviceStatusMonitoring":true,
+   "digitalProcessRepresentation":false,
+   "cloudUsage":true,
+   "cloudService":"SAAS",
+   "deploymentModel":"PUBLIC",
+   "testEnvironment":"Dezentral gemanagte Testumgebung",
+   "escrow":{
+      "key":"NOT_APPLICABLE",
+      "name":"Not applicable"
+   },
+   "escrowProvider":null
+}', current_timestamp, '99-01-01');
+
+insert into application_infos.json_data (json, scan_date, product_nr) values 
+('
+{
+   "id":"99-01-02",
+   "productType":"it_product",
+   "name":"EMC NetWorker",
+   "alias":"wird gelöscht!",
+   "type":"Kaufprodukt",
+   "orgUnit":{
+      "id":2,
+      "name":"Linie",
+      "level":1,
+      "parent":{
+         "id":1,
+         "name":"Commerzbank",
+         "level":0,
+         "parent":null
+      }
+   },
+   "functionalUnit":{
+      "id":220,
+      "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > ",
+      "name":"Products and Arrangements / Contract (alt)",
+      "level":"ARCHITECTURE_CLUSTER",
+      "active":true,
+      "externalId":"000013",
+      "parent":{
+         "id":67,
+         "functionalPlacement":"Anwendung > ",
+         "name":"Anwendung",
+         "level":"FRAMEWORK",
+         "active":true,
+         "externalId":"000001",
+         "parent":null
+      }
+   },
+   "vendor":"Test vendor 1",
+   "vendorSupport":"NOT_RELEVANT",
+   "vendorSupportEndDate":null,
+   "description":"EMC NetWorker provides the ability to protect an enterprise against data loss.",
+   "remark":"remark",
+   "applicationOperation":"Intern",
+   "firstUsedDate":"1997-07-01",
+   "actualityConfirmationDate":"2020-08-03",
+   "updateDateTime":"2018-05-10T00:00:00",
+   "version":"19.2",
+   "status":"produktiv",
+   "exportControlNumber":"EAR99",
+   "appWithPaymentAccount":false,
+   "algorithmicTrading":"Kein Algorithmus",
+   "creationDate":"2020-01-01",
+   "specialCostCenter":false,
+   "interfaceAbsenceConfirmed":false,
+   "epcSepaRelevant":false,
+   "responsibilities":[
+      {
+         "role":{
+            "name":"Business / Product Ownership",
+            "typeKey":"BPO",
+            "current":true
+         },
+         "comsiId":"user637",
+         "userDetails":{
+            "firstName":"Xenia",
+            "lastName":"Baumann",
+            "email":"Xenia.Baumann@commerzbank.net",
+            "department":null,
+            "phone":"+44 171 2356678",
+            "mobile":"+48 42 222 22 22"
+         }
+      }
+   ],
+   "criticality":{
+      "bcmClass":"weniger kritisch",
+      "rpo":"1 Tag",
+      "rto":"24 Stunden"
+   },
+   "costOwners":[
+      {
+         "id":85,
+         "name":"GS-IT"
+      },
+      {
+         "id":83,
+         "name":"CM"
+      },
+      {
+         "id":82,
+         "name":"PC-RB"
+      }
+   ],
+   "userInfo":{
+      "count":"bis 200",
+      "numberOfUsers":null,
+      "users":"GS-IT, MSB-CB Ausland, GRM-IC, PC-RB, GRM-CC, CM",
+      "usersNormalized":[
+         {
+            "id":85,
+            "name":"GS-IT"
+         },
+         {
+            "id":83,
+            "name":"CM"
+         },
+         {
+            "id":90,
+            "name":"MSB-CB Ausland"
+         },
+         {
+            "id":91,
+            "name":"GRM-IC"
+         },
+         {
+            "id":86,
+            "name":"GRM-CC"
+         },
+         {
+            "id":82,
+            "name":"PC-RB"
+         }
+      ],
+      "region":"Luxembourg",
+      "regionNormalized":[
+         {
+            "key":"LUXEMBOURG",
+            "name":"Luxembourg"
+         }
+      ],
+      "regionalUserBaseOther":null,
+      "languages":[
+         
+      ],
+      "languageRemark":null
+   },
+   "flags":[
+      
+   ],
+   "outsourced":false,
+   "regulatoryApplication":false,
+   "electronicCustomerCommunication":false,
+   "recoveryTime":"999:00",
+   "recoveryClass":3,
+   "multiClient":"NO",
+   "sourceCodeUsage":false,
+   "serviceStatusMonitoring":true,
+   "digitalProcessRepresentation":false,
+   "cloudUsage":false,
+   "testEnvironment":"Zentrale Testumgebung",
+   "escrow":{
+      "key":"NOT_APPLICABLE",
+      "name":"Not applicable"
+   },
+   "escrowProvider":null
+}', current_timestamp, '99-01-02');
+
+insert into application_infos.json_data (json, scan_date, product_nr) values 
+('
+{
+   "id":"99-01-03",
+   "productType":"it_product",
+   "name":"Symantec Endpoint Protection for COBA Windows Server",
+   "alias":"wird gelöscht!",
+   "type":"Kaufprodukt",
+   "orgUnit":{
+      "id":2,
+      "name":"Linie",
+      "level":1,
+      "parent":{
+         "id":1,
+         "name":"Commerzbank",
+         "level":0,
+         "parent":null
+      }
+   },
+   "functionalUnit":{
+      "id":114,
+      "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > Produkt-Vereinbarung (alt) > ",
+      "name":"Produkt-Vereinbarung (alt)",
+      "level":"FUNCTIONAL_GROUP",
+      "active":true,
+      "externalId":"000014",
+      "parent":{
+         "id":220,
+         "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > ",
+         "name":"Products and Arrangements / Contract (alt)",
+         "level":"ARCHITECTURE_CLUSTER",
+         "active":true,
+         "externalId":"000013",
+         "parent":{
+            "id":67,
+            "functionalPlacement":"Anwendung > ",
+            "name":"Anwendung",
+            "level":"FRAMEWORK",
+            "active":true,
+            "externalId":"000001",
+            "parent":null
+         }
+      }
+   },
+   "vendor":"Symantec Deutschland GmbH",
+   "vendorSupport":"NOT_AVAILABLE",
+   "vendorSupportEndDate":null,
+   "description":"Antivirus Software für Microsoft Server Betriebssysteme (inkl. Antivirus und IDS Funktionalität) wird auf Serverbasierendem Betriebsmodell 4 ausgeführt.",
+   "remark":"remark",
+   "applicationOperation":"Intern",
+   "firstUsedDate":"2007-01-01",
+   "actualityConfirmationDate":"2020-09-25",
+   "updateDateTime":"2018-02-04T00:00:00",
+   "statusChangeDate":"2010-06-01",
+   "version":"12.1.7369.6900",
+   "status":"produktiv",
+   "algorithmicTrading":"Kein Algorithmus",
+   "creationDate":"2020-03-04",
+   "specialCostCenter":false,
+   "interfaceAbsenceConfirmed":false,
+   "epcSepaRelevant":true,
+   "responsibilities":[
+      {
+         "role":{
+            "name":"Business / Product Ownership",
+            "typeKey":"BPO",
+            "current":true
+         },
+         "comsiId":"user971",
+         "userDetails":{
+            "firstName":"Felix",
+            "lastName":"Engel",
+            "email":"Felix.Engel@commerzbank.net",
+            "department":null,
+            "phone":"+420 165 99933",
+            "mobile":"+420 165 99933"
+         }
+      }
+   ],
+   "criticality":{
+      "bcmClass":"unkritisch",
+      "rpo":"1 Woche",
+      "rto":"1 Woche"
+   },
+   "costOwners":[
+      {
+         "id":85,
+         "name":"GS-IT"
+      },
+      {
+         "id":84,
+         "name":"PC-WM"
+      },
+      {
+         "id":87,
+         "name":"GS-OR"
+      },
+      {
+         "id":90,
+         "name":"MSB-CB Ausland"
+      },
+      {
+         "id":86,
+         "name":"GRM-CC"
+      }
+   ],
+   "userInfo":{
+      "count":"bis 200",
+      "numberOfUsers":null,
+      "users":"PC-RB, GS-IT, PC-WM, CM, GS-OR, GRM-CC, GRM-IC, GRM-RO, MSB-CB Ausland",
+      "usersNormalized":[
+         {
+            "id":85,
+            "name":"GS-IT"
+         },
+         {
+            "id":84,
+            "name":"PC-WM"
+         },
+         {
+            "id":83,
+            "name":"CM"
+         },
+         {
+            "id":87,
+            "name":"GS-OR"
+         },
+         {
+            "id":88,
+            "name":"GRM-RO"
+         },
+         {
+            "id":90,
+            "name":"MSB-CB Ausland"
+         },
+         {
+            "id":91,
+            "name":"GRM-IC"
+         },
+         {
+            "id":86,
+            "name":"GRM-CC"
+         },
+         {
+            "id":82,
+            "name":"PC-RB"
+         }
+      ],
+      "region":"Worldwide",
+      "regionNormalized":[
+         {
+            "key":"WORLDWIDE",
+            "name":"Worldwide"
+         }
+      ],
+      "regionalUserBaseOther":null,
+      "languages":[
+         
+      ],
+      "languageRemark":null
+   },
+   "flags":[
+      
+   ],
+   "outsourced":false,
+   "regulatoryApplication":true,
+   "electronicCustomerCommunication":false,
+   "recoveryTime":"999:00",
+   "recoveryClass":2,
+   "multiClient":"NO",
+   "sourceCodeUsage":false,
+   "serviceStatusMonitoring":true,
+   "digitalProcessRepresentation":false,
+   "cloudUsage":true,
+   "cloudService":"SAAS",
+   "deploymentModel":"PUBLIC",
+   "testEnvironment":"Dezentrale Testumgebung",
+   "escrow":{
+      "key":"ESCROW_REQUIRED",
+      "name":"Escrow required"
+   },
+   "escrowProvider":"Commerzbank"
+}', current_timestamp, '99-01-03');
+
+insert into application_infos.json_data (json, scan_date, product_nr) values 
+('
+{
+   "id":"99-01-04",
+   "productType":"it_product",
+   "name":"Snare Agent for Windows",
+   "alias":"wird gelöscht!",
+   "type":"Kaufprodukt",
+   "orgUnit":{
+      "id":2,
+      "name":"Linie",
+      "level":1,
+      "parent":{
+         "id":1,
+         "name":"Commerzbank",
+         "level":0,
+         "parent":null
+      }
+   },
+   "functionalUnit":{
+      "id":147,
+      "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > Produkt / Konditionen (alt) > ",
+      "name":"Produkt / Konditionen (alt)",
+      "level":"FUNCTIONAL_GROUP",
+      "active":true,
+      "externalId":"000015",
+      "parent":{
+         "id":220,
+         "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > ",
+         "name":"Products and Arrangements / Contract (alt)",
+         "level":"ARCHITECTURE_CLUSTER",
+         "active":true,
+         "externalId":"000013",
+         "parent":{
+            "id":67,
+            "functionalPlacement":"Anwendung > ",
+            "name":"Anwendung",
+            "level":"FRAMEWORK",
+            "active":true,
+            "externalId":"000001",
+            "parent":null
+         }
+      }
+   },
+   "vendor":"Test vendor 3",
+   "vendorSupport":"AVAILABLE",
+   "vendorSupportEndDate":"2999-12-31",
+   "description":"Snare for Windows is a Windows Server 2003 R2 and Windows Server 2008 R2 and Windows Server 2012 R2 compatible service that interacts with the underlying Windows Eventlog subsystem to facilitate remote, real-time transfer of event log information.",
+   "remark":"remark",
+   "applicationOperation":"Intern",
+   "firstUsedDate":"2011-01-01",
+   "actualityConfirmationDate":"2020-07-26",
+   "updateDateTime":"2018-02-05T00:00:00",
+   "version":"4.2.4 (HP)  /  4.2.4 (CoBa)",
+   "status":"produktiv",
+   "marketRiskRelevance":false,
+   "exportControlNumber":"EAR99",
+   "appWithPaymentAccount":true,
+   "algorithmicTrading":"Kein Algorithmus",
+   "creationDate":"2020-03-05",
+   "developmentType":"INTERNAL",
+   "specialCostCenter":false,
+   "interfaceAbsenceConfirmed":false,
+   "epcSepaRelevant":false,
+   "responsibilities":[
+      {
+         "role":{
+            "name":"Business / Product Ownership",
+            "typeKey":"BPO",
+            "current":true
+         },
+         "comsiId":"user962",
+         "userDetails":{
+            "firstName":"Zoe",
+            "lastName":"Simon",
+            "email":"Zoe.Simon@commerzbank.net",
+            "department":null,
+            "phone":"+420 165 99933",
+            "mobile":"+420 165 99933"
+         }
+      }
+   ],
+   "criticality":{
+      "bcmClass":"Vererbt",
+      "rpo":"periodisch, statisch oder undefiniert",
+      "rto":"Vererbt"
+   },
+   "costOwners":[
+      {
+         "id":83,
+         "name":"CM"
+      },
+      {
+         "id":88,
+         "name":"GRM-RO"
+      },
+      {
+         "id":86,
+         "name":"GRM-CC"
+      },
+      {
+         "id":82,
+         "name":"PC-RB"
+      }
+   ],
+   "userInfo":{
+      "count":"nicht zutreffend",
+      "numberOfUsers":null,
+      "users":"CM, GS-IT, PC-RB, GRM-CC, PC-WM",
+      "usersNormalized":[
+         {
+            "id":85,
+            "name":"GS-IT"
+         },
+         {
+            "id":84,
+            "name":"PC-WM"
+         },
+         {
+            "id":83,
+            "name":"CM"
+         },
+         {
+            "id":86,
+            "name":"GRM-CC"
+         },
+         {
+            "id":82,
+            "name":"PC-RB"
+         }
+      ],
+      "region":"Germany",
+      "regionNormalized":[
+         {
+            "key":"GERMANY",
+            "name":"Germany"
+         }
+      ],
+      "regionalUserBaseOther":null,
+      "languages":[
+         
+      ],
+      "languageRemark":null
+   },
+   "flags":[
+      
+   ],
+   "outsourced":true,
+   "sourcingId":"00048-00-000",
+   "regulatoryApplication":false,
+   "electronicCustomerCommunication":false,
+   "recoveryTime":"168:00",
+   "recoveryClass":3,
+   "multiClient":"NO",
+   "sourceCodeUsage":false,
+   "serviceStatusMonitoring":true,
+   "digitalProcessRepresentation":false,
+   "cloudUsage":false,
+   "testEnvironment":"Monogame Testumgebung",
+   "escrow":{
+      "key":"NO_ESCROW_REQUIRED",
+      "name":"No Escrow required"
+   },
+   "escrowProvider":null
+}', current_timestamp, '99-01-04');
+
+insert into application_infos.json_data (json, scan_date, product_nr) values 
+('
+{
+   "id":"99-01-05",
+   "productType":"it_product",
+   "name":"MS Windows Server",
+   "alias":"wird gelöscht!",
+   "type":"angepasste Fremdsoftware",
+   "orgUnit":{
+      "id":2,
+      "name":"Linie",
+      "level":1,
+      "parent":{
+         "id":1,
+         "name":"Commerzbank",
+         "level":0,
+         "parent":null
+      }
+   },
+   "functionalUnit":{
+      "id":144,
+      "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > Rahmen-Vereinbarung (alt) > ",
+      "name":"Rahmen-Vereinbarung (alt)",
+      "level":"FUNCTIONAL_GROUP",
+      "active":true,
+      "externalId":"000016",
+      "parent":{
+         "id":220,
+         "functionalPlacement":"Anwendung > Products and Arrangements / Contract (alt) > ",
+         "name":"Products and Arrangements / Contract (alt)",
+         "level":"ARCHITECTURE_CLUSTER",
+         "active":true,
+         "externalId":"000013",
+         "parent":{
+            "id":67,
+            "functionalPlacement":"Anwendung > ",
+            "name":"Anwendung",
+            "level":"FRAMEWORK",
+            "active":true,
+            "externalId":"000001",
+            "parent":null
+         }
+      }
+   },
+   "vendor":"Microsoft GmbH",
+   "vendorSupport":"NOT_RELEVANT",
+   "vendorSupportEndDate":null,
+   "description":"Windows Server Operating System - one Coria-ID for all versions",
+   "remark":"remark",
+   "applicationOperation":"Intern",
+   "firstUsedDate":"2017-09-04",
+   "actualityConfirmationDate":"2020-10-02",
+   "updateDateTime":"2018-02-06T00:00:00",
+   "version":"Windows Server 2016",
+   "status":"in Löschung",
+   "marketRiskRelevance":false,
+   "appWithPaymentAccount":true,
+   "algorithmicTrading":"Kein Algorithmus",
+   "creationDate":"2020-03-06",
+   "specialCostCenter":false,
+   "interfaceAbsenceConfirmed":true,
+   "epcSepaRelevant":true,
+   "responsibilities":[
+      {
+         "role":{
+            "name":"Business / Product Ownership",
+            "typeKey":"BPO",
+            "current":true
+         },
+         "comsiId":"user956",
+         "userDetails":{
+            "firstName":"Emelie",
+            "lastName":"Zimmermann",
+            "email":"Emelie.Zimmermann@commerzbank.net",
+            "department":null,
+            "phone":null,
+            "mobile":"+49 9123456789"
+         }
+      }
+   ],
+   "criticality":{
+      "bcmClass":"Vererbt",
+      "rpo":"1 Tag",
+      "rto":"Vererbt"
+   },
+   "costOwners":[
+      {
+         "id":90,
+         "name":"MSB-CB Ausland"
+      },
+      {
+         "id":82,
+         "name":"PC-RB"
+      }
+   ],
+   "userInfo":{
+      "count":"nicht zutreffend",
+      "numberOfUsers":null,
+      "users":"PC-RB, GRM-IC",
+      "usersNormalized":[
+         {
+            "id":91,
+            "name":"GRM-IC"
+         },
+         {
+            "id":82,
+            "name":"PC-RB"
+         }
+      ],
+      "region":"Worldwide",
+      "regionNormalized":[
+         {
+            "key":"WORLDWIDE",
+            "name":"Worldwide"
+         }
+      ],
+      "regionalUserBaseOther":null,
+      "languages":[
+         
+      ],
+      "languageRemark":null
+   },
+   "flags":[
+      
+   ],
+   "outsourced":true,
+   "sourcingId":"00283-00-000",
+   "regulatoryApplication":false,
+   "electronicCustomerCommunication":false,
+   "recoveryTime":"999:00",
+   "recoveryClass":3,
+   "multiClient":"NO",
+   "sourceCodeUsage":false,
+   "serviceStatusMonitoring":true,
+   "digitalProcessRepresentation":false,
+   "cloudUsage":false,
+   "testEnvironment":"Perikale Testumgebung",
+   "escrow":{
+      "key":"NOT_APPLICABLE",
+      "name":"Not applicable"
+   },
+   "escrowProvider":null
+}', current_timestamp, '99-01-05');

@@ -1,0 +1,80 @@
+-----------------------------------
+-- AUTHOR:	Dustin Schulz, ORDIX AG
+-- DATE:	19.10.2022
+-- VERSION:	1.0
+-- PURPOSE:	Inserts the application JSON data into the tables appl_info, appl_contacts & appl_responsibilities in schema application_infos
+-----------------------------------
+
+CREATE OR REPLACE procedure data_processing_pkg.insert_application_data(p_count numeric, p_scan_date timestamp) AS $body$
+DECLARE
+	v_array_length int;
+	v_array_count int := 0;
+	v_exception_count int := 0;
+BEGIN
+	select json_array_length(json -> 'responsibilities') into v_array_length from temp_json_elements;
+      
+    insert into application_infos.appl_info
+    (product_nr, product_name, product_alias, status, bcm_klasse, max_ausfallzeit, max_datenrueckstand, recovery_time, availability_class, beschreibung, campus_keyarea, campus_cluster, campus_ce, scan_date)
+      select
+        json ->> 'id',
+        json ->> 'name',
+        json ->> 'alias',
+        json ->> 'status',
+        json ->  'criticality' ->> 'bcmClass',
+        json ->  'criticality' ->> 'rto',
+        json ->  'criticality' ->> 'rpo',
+        json ->> 'recoveryTime',
+        json ->> 'recoveryClass',
+        json ->> 'description',
+        json  -> 'orgUnit' -> 'parent' -> 'parent' ->>'name',
+        json  -> 'orgUnit' -> 'parent' ->> 'name',
+        json  -> 'orgUnit' ->> 'name',
+        scan_date
+      from temp_json_elements;
+
+    insert into  log_infos.logging (level, affected_element, description, scan_date, timestamp) values
+      ('NOTICE', 'application_infos.appl_info', 'insert '||coalesce(p_count, 0)||' row(s)', p_scan_date, current_timestamp);
+      
+    loop
+        exit when v_array_count = v_array_length;
+        BEGIN
+	    insert into application_infos.appl_contacts
+            (user_id, name, telefon, email, department, telefon2, description, type_key, scan_date)
+                select
+                    --json ->> 'id',
+                    --json -> 'responsibilities' ->  v_array_count -> 'role' ->> 'name',
+                    json -> 'responsibilities' -> v_array_count ->> 'comsiId',
+                    --null,
+                    (json -> 'responsibilities' ->  v_array_count -> 'userDetails' ->> 'firstName') || ' ' || (json -> 'responsibilities' -> v_array_count -> 'userDetails' ->> 'lastName'),
+		    json -> 'responsibilities' ->  v_array_count -> 'userDetails' ->> 'phone',
+                    json -> 'responsibilities' ->  v_array_count -> 'userDetails' ->> 'email',
+                    json -> 'responsibilities' ->  v_array_count -> 'userDetails' ->> 'department',
+                    json -> 'responsibilities' ->  v_array_count -> 'userDetails' ->> 'mobile',
+                    json -> 'responsibilities' ->  v_array_count ->> 'responsibilityDescription',
+                    json -> 'responsibilities' ->  v_array_count -> 'role' ->> 'typeKey',
+                    scan_date
+                from temp_json_elements;
+	EXCEPTION
+		when UNIQUE_VIOLATION then v_exception_count = v_exception_count + 1;	
+	END;
+
+        insert into application_infos.appl_responsibilities  
+        (product_nr, user_id, type_key, scan_date)  
+            select
+                json ->> 'id',
+                json -> 'responsibilities' -> v_array_count ->> 'comsiId',
+                json -> 'responsibilities' -> v_array_count -> 'role' ->> 'typeKey',
+		scan_date
+            from temp_json_elements;
+
+        v_array_count := v_array_count + 1;
+    end loop;
+
+    insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values
+    ('NOTICE', 'application_infos.appl_contacts', 'insert '||v_array_count - v_exception_count||' row(s)', p_scan_date, current_timestamp),
+    ('NOTICE', 'application_infos.appl_responsibilities', 'insert '||v_array_count||' row(s)', p_scan_date, current_timestamp);
+
+END; $body$
+LANGUAGE PLPGSQL;
+END;
+

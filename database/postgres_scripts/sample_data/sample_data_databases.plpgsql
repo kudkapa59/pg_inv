@@ -1,0 +1,21 @@
+ insert into detail_infos.json_data_databases (json, scan_date, instance_name, database_name, project) values 
+( '{
+    "charset": "UTF8",
+    "collation": "en_US.UTF8",
+    "etag": "6e76078429c15950098a4431a12b8a7f7be66b173d73f510119f5f5ab8a08e21",
+    "instance": "pg-01-42-73-dks-blue-dev-01",
+    "kind": "sql#database",
+    "name": "postgres",
+    "project": "tecfo-psql-blue-dev-2397",
+    "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-42-73-dks-blue-dev-01/databases/postgres"
+  }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'postgres', 'tecfo-psql-blue-dev-2397'),
+( '{
+    "charset": "UTF8",
+    "collation": "en_US.UTF8",
+    "etag": "010928fd62528cb5a2aaa1d0d310b4bbf693cee5bd20db1115d36d0caec744fc",
+    "instance": "pg-01-42-73-dks-blue-dev-01",
+    "kind": "sql#database",
+    "name": "admin2fa",
+    "project": "tecfo-psql-blue-dev-2397",
+    "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-42-73-dks-blue-dev-01/databases/admin2fa"
+  }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'admin2fa', 'tecfo-psql-blue-dev-2397');

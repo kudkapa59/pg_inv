@@ -1,0 +1,101 @@
+create schema if not exists application_infos;
+set search_path = 'application_infos';
+
+drop table if exists json_data;
+create table json_data (
+	product_nr text,
+    json json,
+	scan_date timestamp,
+    inconsistent boolean
+);
+alter table json_data add primary key (product_nr, scan_date);
+
+drop table if exists appl_info;
+create table appl_info (
+    PRODUCT_NR text,
+    PRODUCT_NAME text,
+    PRODUCT_ALIAS text,
+    STATUS text,
+    BCM_KLASSE text,
+    MAX_AUSFALLZEIT text,
+    MAX_DATENRUECKSTAND text,
+    RECOVERY_TIME text,
+    AVAILABILITY_CLASS text,
+    BESCHREIBUNG text,
+    CAMPUS_KEYAREA text,
+    CAMPUS_CLUSTER text,
+    CAMPUS_CE text,
+	SCAN_DATE timestamp
+);
+alter table appl_info add primary key (PRODUCT_NR, scan_date);
+
+drop table if exists appl_contacts;
+create table appl_contacts (
+--TYP text,
+USER_ID text,
+NAME text,
+TELEFON text,
+EMAIL text,
+DEPARTMENT text,
+TELEFON2 text,
+DESCRIPTION text,
+TYPE_KEY text,
+SCAN_DATE timestamp
+);
+alter table appl_contacts add primary key (USER_ID, TYPE_KEY, scan_date);
+
+drop table if exists appl_responsibilities;
+create table appl_responsibilities (
+PRODUCT_NR text,
+USER_ID text,
+TYPE_KEY text,
+SCAN_DATE timestamp
+);
+alter table appl_responsibilities add primary key (PRODUCT_NR, USER_ID, TYPE_KEY, SCAN_DATE);
+alter table appl_responsibilities add foreign key (PRODUCT_NR, SCAN_DATE) references appl_info (PRODUCT_NR, SCAN_DATE);
+alter table appl_responsibilities add foreign key (USER_ID, TYPE_KEY, SCAN_DATE) references appl_contacts (USER_ID, TYPE_KEY, SCAN_DATE);
+
+create or replace view json_data_latest as
+	with latest as (
+		select product_nr, max(scan_date) as max_scan_date
+		from json_data
+        WHERE scan_date = (select max(scan_date) from json_data)        
+		group by product_nr)
+	select jd.*
+	from json_data jd, latest l
+	where jd.product_nr = l.product_nr
+	and jd.scan_date = l.max_scan_date;
+
+create or replace view appl_info_latest as
+	with latest as (
+		select PRODUCT_NR, max(scan_date) as max_scan_date
+		from appl_info
+        WHERE scan_date = (select max(scan_date) from appl_info)        
+		group by PRODUCT_NR)
+	select ai.*
+	from appl_info ai, latest l
+	where ai.PRODUCT_NR = l.PRODUCT_NR
+	and ai.scan_date = l.max_scan_date;
+
+create or replace view appl_contacts_latest as
+	with latest as (
+		select distinct USER_ID, max(scan_date) as max_scan_date
+		from appl_contacts
+        WHERE scan_date = (select max(scan_date) from appl_contacts)
+		group by USER_ID)
+	select ac.*
+	from appl_contacts ac, latest l
+	where ac.USER_ID = l.USER_ID
+	and ac.scan_date = l.max_scan_date;
+
+create or replace view appl_responsibilities_latest as
+	with latest as (
+		select distinct PRODUCT_NR, USER_ID, max(scan_date) as max_scan_date
+		from appl_responsibilities
+        WHERE scan_date = (select max(scan_date) from appl_responsibilities)
+		group by PRODUCT_NR, USER_ID)
+	select ar.*
+	from appl_responsibilities ar, latest l
+	where ar.PRODUCT_NR = l.PRODUCT_NR
+	and ar.USER_ID = l.USER_ID
+	and ar.scan_date = l.max_scan_date;

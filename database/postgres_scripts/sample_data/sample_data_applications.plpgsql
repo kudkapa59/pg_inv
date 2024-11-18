@@ -1,0 +1,118 @@
+ insert into application_infos.json_data (json, scan_date, product_nr) values 
+( '{
+      "actualityConfirmationDate": "2022-05-25",
+      "algorithmicTrading": "Kein Algorithmus",
+      "alias": "string",
+      "appWithPaymentAccount": true,
+      "applicationOperation": "string",
+      "classification": {
+        "awgAwvRelevant": true,
+        "awgRemark": "string",
+        "embargoOfacRelevant": true,
+        "embargoRemark": "string",
+        "gdpduRelevant": true,
+        "gdpduRemark": "string",
+        "gwgRelevant": true,
+        "gwgRemark": "string",
+        "itsigRelevant": true,
+        "mifidRelevant": true,
+        "mifidRemark": "string",
+        "psd2Relevant": true,
+        "regulatoryRequirementsRelevant": true,
+        "regulatoryRequirementsRemark": "string"
+      },
+      "creationDate": "2016-03-15",
+      "criticality": {
+        "bcmClass": "string",
+        "rpo": "string",
+        "rto": "string"
+      },
+      "description": "string",
+      "developmentType": "INTERNAL",
+      "epcSepaRelevant": true,
+      "exportControlNumber": "EAR99",
+      "firstUsedDate": "2022-05-25",
+      "flags": [
+        "string"
+      ],
+      "functionalUnit": {
+        "externalId": "string",
+        "functionalPlacement": "string",
+        "id": 0,
+        "level": "FRAMEWORK",
+        "name": "string",
+        "parent": "string"
+      },
+      "id": "coria-id",
+      "marketRiskRelevance": false,
+      "name": "string",
+      "orgUnit": {
+        "id": 0,
+        "level": 0,
+        "name": "string",
+        "parent": "string"
+      },
+      "productType": "it_product",
+      "remark": "Application is used by GRM-CRC-C",
+      "responsibilities": [
+        {
+          "comsiId": {
+            "test": "string2"
+          },
+          "responsibilityDescription": "string",
+          "role": {
+            "current": true,
+            "name": "Business / Product Ownership",
+            "typeKey": "BPO"
+          },
+          "userDetails": {
+            "department": "string",
+            "email": "jdoe@example.com",
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "mobile": "string",
+            "phone": "string"
+          }
+        },{
+          "comsiId": {
+            "test": "string"
+          },
+          "responsibilityDescription": "string",
+          "role": {
+            "current": true,
+            "name": "Business / Product Ownership",
+            "typeKey": "BPO"
+          },
+          "userDetails": {
+            "department": "string",
+            "email": "jdoe@example.com",
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "mobile": "string",
+            "phone": "string"
+          }
+        }
+      ],
+      "specialCostCenter": true,
+      "status": "string",
+      "statusChangeDate": "2022-05-25",
+      "type": "string",
+      "updateDateTime": "2021-06-03T21:23:49",
+      "userInfo": {
+        "count": "mehr als 5.000",
+        "region": "European Union - others",
+        "regionalUserBaseOther": "London",
+        "users": "CM, MSB-CB Ausland",
+        "usersNormalized": [
+          {
+            "id": 0,
+            "name": "string"
+          }
+        ]
+      },
+      "vendor": "Commerzbank",
+      "vendorSupport": "AVAILABLE",
+      "vendorSupportEndDate": "2022-06-30",
+      "version": "string"
+    }', current_timestamp, 'coria-id');
+

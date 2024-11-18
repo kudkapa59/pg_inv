@@ -1,0 +1,40 @@
+-----------------------------------
+-- AUTHOR:	Dustin Schulz, ORDIX AG
+-- DATE:	19.10.2022
+-- VERSION:	1.0
+-- PURPOSE:	Main Procedure wich calls sub procedures to distribute the raw JSON data into the relational tables
+-----------------------------------
+
+create schema if not exists data_processing_pkg;
+set search_path = 'data_processing_pkg';
+
+CREATE OR REPLACE procedure data_processing_pkg.restructure_data(p_name text) AS $body$
+declare
+  v_count numeric;
+  v_scan_date timestamp;
+begin
+  call data_processing_pkg.provide_json_elements(p_name); -- JSON Daten bereitstellen
+  
+  -- Count records per scan_date
+  select count(*), scan_date
+  into v_count, v_scan_date
+  from temp_json_elements
+  group by scan_date;
+
+  if p_name = 'instances' then
+    call data_processing_pkg.insert_instance_data(v_count, v_scan_date);
+
+  elsif p_name = 'applications' then
+    call data_processing_pkg.insert_application_data(v_count, v_scan_date);
+  
+  elsif p_name = 'databases' then
+  	call data_processing_pkg.insert_database_data(v_count, v_scan_date);
+
+  elsif p_name = 'users' then
+  	call data_processing_pkg.insert_user_data(v_count, v_scan_date);
+
+  end if;
+end; 
+$body$
+LANGUAGE PLPGSQL;
+END;

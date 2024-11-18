@@ -1,0 +1,53 @@
+-----------------------------------
+-- AUTHOR:	Dustin Schulz, ORDIX AG
+-- DATE:	19.10.2022
+-- VERSION:	1.0
+-- PURPOSE:	Inserts the instance JSON data into the table instance_infos.sql_instances
+-----------------------------------
+
+CREATE OR REPLACE procedure data_processing_pkg.insert_instance_data(p_count numeric, p_scan_date timestamp) AS $body$
+BEGIN
+	insert into instance_infos.sql_instances
+    (create_time, sub_version, version, zone, secondary_zone, type, ip_address, master_instance, instance_name, project, region, ssl_expiration_time, available_type, retained_backups, backups_enabled, pit_reco_enabled, replication_log_arch, log_retention_days, disk_size_gb, disk_type, replica_enabled, replica_type, auto_resize, auto_resize_limit, tier, cpu, mem_mb, /*customer_id, coba_managed_service, lifecycle_status, coba_name,*/ user_labels, status, scan_date)
+      select
+        to_timestamp((json ->> 'createTime'), 'YYYY-MM-DDT HH24:MI:SS.MS'),
+        json ->> 'databaseInstalledVersion',
+        json ->> 'databaseVersion',
+        json ->> 'gceZone',
+        json ->> 'secondaryGceZone',
+        json ->> 'instanceType',
+        json -> 'ipAddresses' -> 0 ->> 'ipAddress',
+        json ->> 'masterInstanceName',
+        json ->> 'name',
+        json ->> 'project',
+        json ->> 'region',
+        to_timestamp((json ->  'serverCaCert' ->> 'expirationTime'), 'YYYY-MM-DDT HH24:MI:SS.MS'),
+        json ->  'settings' ->> 'availabilityType',
+        CAST (json ->  'settings' ->  'backupConfiguration' ->  'backupRetentionSettings' ->> 'retainedBackups' as numeric),
+        CAST (json ->  'settings' ->  'backupConfiguration' ->> 'enabled' as boolean),
+        CAST (json ->  'settings' ->  'backupConfiguration' ->> 'pointInTimeRecoveryEnabled' as boolean),
+        CAST (json ->  'settings' ->  'backupConfiguration' ->> 'replicationLogArchivingEnabled' as boolean),
+        CAST (json ->  'settings' ->  'backupConfiguration' ->> 'transactionLogRetentionDays' as numeric),
+        CAST (json ->  'settings' ->> 'dataDiskSizeGb' as numeric),
+        json ->  'settings' ->> 'dataDiskType',
+        CAST (json ->  'settings' ->> 'databaseReplicationEnabled' as boolean),
+        json ->  'settings' ->> 'replicationType',
+        CAST (json ->  'settings' ->> 'storageAutoResize' as boolean),
+        CAST (json ->  'settings' ->> 'storageAutoResizeLimit' as numeric),
+        json ->  'settings' ->> 'tier',
+        json ->  'settings' ->> 'tier',
+        json ->  'settings' ->> 'tier',
+        --json ->  'settings' ->  'userLabels' ->> 'coba_coria',
+        --json ->  'settings' ->  'userLabels' ->> 'coba_managed_service',
+        --json ->  'settings' ->  'userLabels' ->> 'coba-life-cycle-status',
+        --json ->  'settings' ->  'userLabels' ->> 'coba-name',
+        json ->  'settings' ->  'userLabels',
+        json ->> 'state',
+        scan_date
+      from temp_json_elements;
+
+      insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values
+      ('NOTICE', 'instance_infos.sql_instances', 'insert '||coalesce(p_count, 0)||' row(s)', p_scan_date, current_timestamp);
+END; $body$
+LANGUAGE PLPGSQL;
+END;

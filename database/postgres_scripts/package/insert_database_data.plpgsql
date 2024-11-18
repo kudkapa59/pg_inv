@@ -1,0 +1,27 @@
+-----------------------------------
+-- AUTHOR:	Dustin Schulz, ORDIX AG
+-- DATE:	19.10.2022
+-- VERSION:	1.0
+-- PURPOSE:	Inserts the database JSON data into the table detail_infos.sql_databases
+-----------------------------------
+
+CREATE OR REPLACE procedure data_processing_pkg.insert_database_data(p_count numeric, p_scan_date timestamp) AS $body$
+BEGIN
+	insert into detail_infos.sql_databases
+    (instance_name, database_name, project, etag, charset, collation_setting, selflink, scan_date)
+      select
+        json ->> 'instance',
+        json ->> 'name',
+        json ->> 'project',
+        json ->> 'etag',
+        json ->> 'charset',
+        json ->> 'collation',
+        json ->> 'selfLink',
+        scan_date
+      from temp_json_elements;
+
+      insert into log_infos.logging (level, affected_element, description, scan_date, timestamp) values
+      ('NOTICE', 'detail_infos.sql_databases', 'insert '||coalesce(p_count, 0)||' row(s)', p_scan_date, current_timestamp);
+END; $body$
+LANGUAGE PLPGSQL;
+END;

@@ -1,0 +1,9 @@
+[Unit]
+Description=Postgres Inventory Dashboard Server
+
+[Service]
+Type=simple
+ExecStart=/home/ta2posq_ztb_icb_commerzbank_com/pginv_repository/pg_inv.sh dashboard -s
+
+[Install]
+WantedBy=multi-user.target

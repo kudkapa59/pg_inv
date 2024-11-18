@@ -1,0 +1,3 @@
+# Data Loading
+
+The data_loading folder contains all scripts used to fetch the needed information from the necessary data sources. The goal is to gather general PostgeSQL instance information as well as which databases and users are pressent on these instances. This information is then enriched by customer detailes fetched from the Commerzbank internal Software Product API provided by the Developer Portal. All scripts are triggered once a day (default 23:00) by a cronjob to gather the latest status.

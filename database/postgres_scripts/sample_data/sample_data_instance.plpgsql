@@ -1,0 +1,1986 @@
+ insert into instance_infos.json_data (json, scan_date, instance_name, project) values 
+( '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-prd-825b:europe-west3:pg-01-43-71-pgdba-prd-01",
+        "createTime": "2022-03-22T18:39:21.327Z",
+        "databaseInstalledVersion": "POSTGRES_13_4",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-a",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.194.63",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-43-71-pgdba-prd-01",
+        "project": "tecfo-psql-blue-prd-825b",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-b",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-prd-825b/instances/pg-01-43-71-pgdba-prd-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=cbc79c04-8a14-4c64-b1a9-43a1528d4cd7",
+            "createTime": "2022-03-22T18:41:07.617Z",
+            "expirationTime": "2032-03-19T18:42:07.617Z",
+            "instance": "pg-01-43-71-pgdba-prd-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "fadc49ee0c04a3233080f646dbfe80b2211b19e9"
+        },
+        "serviceAccountEmailAddress": "p369736850744-dgfhn0@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-prd-landing-tier-afce/global/networks/prd-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-a"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "10",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-custom-1-4096",
+            "userLabels": {
+                "coba_coria": "014371",
+                "coba_managed_service": "postgresql_infra",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-43-71-pgdba-prd-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-43-71-pgdba-prd-01', 'tecfo-psql-blue-prd-825b'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-12-01-10-efw-blue-dev02",
+        "createTime": "2022-02-07T09:06:02.844Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.42",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-12-01-10-efw-blue-dev02",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-12-01-10-efw-blue-dev02",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=d8b0a671-524f-4d46-bc46-a53fb39a4bb1",
+            "createTime": "2022-02-07T09:07:12.791Z",
+            "expirationTime": "2032-02-05T09:08:12.791Z",
+            "instance": "pg-12-01-10-efw-blue-dev02",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "baa82fd7e4123dc84a65ec038c11a5a8cdafb0ed"
+        },
+        "serviceAccountEmailAddress": "p499968324573-p3j46f@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "25",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-f1-micro",
+            "userLabels": {
+                "coba-coria-id": "12-01-10",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-12-01-10-efw-blue-dev02",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-12-01-10-efw-blue-dev02', 'tecfo-psql-blue-dev-2397'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tuc-4edf:europe-west3:pg-01-43-71-test-devtotuc-01",
+        "createTime": "2022-02-23T09:50:55.161Z",
+        "databaseInstalledVersion": "POSTGRES_13_4",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.66.37",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-43-71-test-devtotuc-01",
+        "project": "tecfo-psql-blue-tuc-4edf",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tuc-4edf/instances/pg-01-43-71-test-devtotuc-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=30aaec58-645f-48ce-aab8-9b4943b258fd",
+            "createTime": "2022-02-23T09:52:04.637Z",
+            "expirationTime": "2032-02-21T09:53:04.637Z",
+            "instance": "pg-01-43-71-test-devtotuc-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "f6d09ce3425bfd700ee433a93e64d78507d622a6"
+        },
+        "serviceAccountEmailAddress": "p843283136569-2m8h2j@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tuc-landing-tier-33f9/global/networks/tuc-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "13",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-43-71",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-43-71-test-devtotuc-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-43-71-test-devtotuc-01', 'tecfo-psql-blue-tuc-4edf'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tud-412e:europe-west4:test-cb2elmm-tud-west4-01-replica",
+        "createTime": "2021-11-25T16:38:32.1Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tud-kms-hsm-sc/locations/europe-west4/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tud-kms-hsm-sc/locations/europe-west4/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west4-c",
+        "instanceType": "READ_REPLICA_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.136.3",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "masterInstanceName": "tecfo-psql-blue-tud-412e:test-cb2elmm-tud-west3-01",
+        "name": "test-cb2elmm-tud-west4-01-replica",
+        "project": "tecfo-psql-blue-tud-412e",
+        "region": "europe-west4",
+        "replicaConfiguration": {
+            "failoverTarget": false,
+            "kind": "sql#replicaConfiguration"
+        },
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tud-412e/instances/test-cb2elmm-tud-west4-01-replica",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=012a411c-cb7a-4941-ac84-6ea3d82396b0",
+            "createTime": "2021-11-25T16:42:57.02Z",
+            "expirationTime": "2031-11-23T16:43:57.02Z",
+            "instance": "test-cb2elmm-tud-west4-01-replica",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "2a84e1dc30c916b40075e345c57d646e36b6c5c0"
+        },
+        "serviceAccountEmailAddress": "p1073413540204-5kiuxv@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "activeDirectoryConfig": {
+                "kind": "sql#activeDirectoryConfig"
+            },
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 7,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": false,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": false,
+                "replicationLogArchivingEnabled": false,
+                "startTime": "22:00",
+                "transactionLogRetentionDays": 7
+            },
+            "crashSafeReplicationEnabled": true,
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "databaseReplicationEnabled": true,
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tud-landing-tier-bb9a/global/networks/tud-01-int-vpc01",
+                "requireSsl": false
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west4-c"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "26",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "12-34-56",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-23-45-test",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'test-cb2elmm-tud-west4-01-replica', 'tecfo-psql-blue-tud-412e'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tud-412e:europe-west3:test-cb2elmm-tud-west3-02",
+        "createTime": "2021-11-26T11:03:55.891Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.130.8",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "test-cb2elmm-tud-west3-02",
+        "project": "tecfo-psql-blue-tud-412e",
+        "region": "europe-west3",
+        "replicaNames": [
+            "test-cb2elmm-tud-west3-02-replica",
+            "test-cb2elmm-tud-west3-02-replica-01"
+        ],
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tud-412e/instances/test-cb2elmm-tud-west3-02",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=a8a20394-2ed6-44db-8915-5c209d5806a2",
+            "createTime": "2021-11-26T11:05:00.956Z",
+            "expirationTime": "2031-11-24T11:06:00.956Z",
+            "instance": "test-cb2elmm-tud-west3-02",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "f1f36e7026dad17d4549b2c5d05e4de5780cf603"
+        },
+        "serviceAccountEmailAddress": "p1073413540204-6h50ly@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tud-landing-tier-bb9a/global/networks/tud-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "33",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "12-34-56",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-23-45-test",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'test-cb2elmm-tud-west3-02', 'tecfo-psql-blue-tud-412e'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-prd-825b:europe-west3:pg-01-45-53-champ-admin-portal-prd-01",
+        "createTime": "2021-10-03T13:44:35.272Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.194.5",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-45-53-champ-admin-portal-prd-01",
+        "project": "tecfo-psql-blue-prd-825b",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-a",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-prd-825b/instances/pg-01-45-53-champ-admin-portal-prd-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=1294194e-05d3-47a4-83f1-4136b3b54318",
+            "createTime": "2021-10-03T13:45:27.278Z",
+            "expirationTime": "2031-10-01T13:46:27.278Z",
+            "instance": "pg-01-45-53-champ-admin-portal-prd-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "dc748e432a8c88507a35bb48c130b99bfa785fd6"
+        },
+        "serviceAccountEmailAddress": "p369736850744-6gk5ud@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "cloudsql.enable_pgaudit",
+                    "value": "on"
+                },
+                {
+                    "name": "pgaudit.log",
+                    "value": "all,-read,-write"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.27.78.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.64.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.18.64.0/19"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.27.90.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.48.0/20"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-prd-landing-tier-afce/global/networks/prd-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "secondaryZone": "europe-west3-a",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "85",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-45-53",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-45-53-champ-admin-portal-prd-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-45-53-champ-admin-portal-prd-01', 'tecfo-psql-blue-prd-825b'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-prd-825b:europe-west3:pg-41-07-19-uc4-amdb-prd-01",
+        "createTime": "2022-03-03T06:06:28.031Z",
+        "databaseInstalledVersion": "POSTGRES_13_4",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.194.60",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-41-07-19-uc4-amdb-prd-01",
+        "project": "tecfo-psql-blue-prd-825b",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-c",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-prd-825b/instances/pg-41-07-19-uc4-amdb-prd-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=04eea043-1f8d-464c-b43e-b2d96583fd19",
+            "createTime": "2022-03-03T06:07:37.96Z",
+            "expirationTime": "2032-02-29T06:08:37.96Z",
+            "instance": "pg-41-07-19-uc4-amdb-prd-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "6b318d9ad601027339a50ef41694938cfd8ebd9e"
+        },
+        "serviceAccountEmailAddress": "p369736850744-fctox7@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "cloudsql.enable_pgaudit",
+                    "value": "on"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.9.28.56/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.8.5.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.28.185.105/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.0.0/16"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.40.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.39.45.14/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.4.160.205/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.18.0.0/16"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.27.0.0/16"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-prd-landing-tier-afce/global/networks/prd-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "secondaryZone": "europe-west3-c",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "23",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "41-07-19",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-41-07-19-uc4-amdb-prd-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-41-07-19-uc4-amdb-prd-01', 'tecfo-psql-blue-prd-825b'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-prd-825b:europe-west3:pg-14-24-14-pmt-prod-01",
+        "createTime": "2021-12-20T13:18:18.247Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-a",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.194.29",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-14-24-14-pmt-prod-01",
+        "project": "tecfo-psql-blue-prd-825b",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-b",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-prd-825b/instances/pg-14-24-14-pmt-prod-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=4617e344-5107-4fc3-89c1-fcf89b7aa2f1",
+            "createTime": "2021-12-20T13:20:13.817Z",
+            "expirationTime": "2031-12-18T13:21:13.817Z",
+            "instance": "pg-14-24-14-pmt-prod-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "f6342a4c0a9b083132d99b3bd322ed7614ce4500"
+        },
+        "serviceAccountEmailAddress": "p369736850744-b5vx4n@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "cloudsql.enable_pgaudit",
+                    "value": "on"
+                },
+                {
+                    "name": "pgaudit.log",
+                    "value": "all,-read,-write"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.10.233.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-prd-landing-tier-afce/global/networks/prd-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-a"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "40",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "14-24-14",
+                "coba-life-cycle-status": "life",
+                "coba-name": "pg-14-24-14-pmt-prod-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-14-24-14-pmt-prod-01', 'tecfo-psql-blue-prd-825b'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-01-42-73-dks-blue-dev-01",
+        "createTime": "2022-01-31T20:16:49.827Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.30",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-42-73-dks-blue-dev-01",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-42-73-dks-blue-dev-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=122d2b75-bf83-49dd-b07f-da5281be17fd",
+            "createTime": "2022-01-31T20:18:05.357Z",
+            "expirationTime": "2032-01-29T20:19:05.357Z",
+            "instance": "pg-01-42-73-dks-blue-dev-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "05924c39786ab1468dd0e3b75153764b140c0ed9"
+        },
+        "serviceAccountEmailAddress": "p499968324573-krw9a5@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.61.37.110/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "32",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-42-73",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-42-73-dks-blue-dev-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-42-73-dks-blue-dev-01', 'tecfo-psql-blue-dev-2397'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-01-43-71-pgsql-dev-01",
+        "createTime": "2021-09-28T08:02:57.999Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.2",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-43-71-pgsql-dev-01",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-43-71-pgsql-dev-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=6663b6df-ebf2-4f6f-acbe-58b8ce8f0364",
+            "createTime": "2021-09-28T08:05:00.722Z",
+            "expirationTime": "2031-09-26T08:06:00.722Z",
+            "instance": "pg-01-43-71-pgsql-dev-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "780060519fb74c52f0815f604511ffd57d0f0161"
+        },
+        "serviceAccountEmailAddress": "p499968324573-h76bgj@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "48",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-43-71",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-43-71-pgsql-dev-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-43-71-pgsql-dev-01', 'tecfo-psql-blue-dev-2397'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-01-45-18-cam-blue-dev-01",
+        "createTime": "2022-01-31T20:04:08.409Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.28",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-45-18-cam-blue-dev-01",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-45-18-cam-blue-dev-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=fe05a57f-3c24-4098-9272-43e4195f961b",
+            "createTime": "2022-01-31T20:05:21.607Z",
+            "expirationTime": "2032-01-29T20:06:21.607Z",
+            "instance": "pg-01-45-18-cam-blue-dev-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "0c8ca6730b10da79ca8f609c4d07e13ad8555e5f"
+        },
+        "serviceAccountEmailAddress": "p499968324573-xik7tc@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.45.37/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "25",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-45-18",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-45-18-cam-blue-dev-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-45-18-cam-blue-dev-01', 'tecfo-psql-blue-dev-2397'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tuc-4edf:europe-west3:pg-41-07-19-uc4-amdb-tuc-01",
+        "createTime": "2022-01-11T09:40:16.677Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-c",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.66.19",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-41-07-19-uc4-amdb-tuc-01",
+        "project": "tecfo-psql-blue-tuc-4edf",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tuc-4edf/instances/pg-41-07-19-uc4-amdb-tuc-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=436a9047-a212-4db0-82c5-e5c722711a8c",
+            "createTime": "2022-01-11T09:41:26.727Z",
+            "expirationTime": "2032-01-09T09:42:26.727Z",
+            "instance": "pg-41-07-19-uc4-amdb-tuc-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "a4ce556f53c7bc4787458b6a94f060cb8e232c95"
+        },
+        "serviceAccountEmailAddress": "p843283136569-wny1wp@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.9.28.56/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.27.0.0/16"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.28.185.105/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.0.0/16"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tuc-landing-tier-33f9/global/networks/tuc-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-c"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "30",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "41-07-19",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-41-07-19-uc4-amdb-tuc-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-41-07-19-uc4-amdb-tuc-01', 'tecfo-psql-blue-tuc-4edf'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tuc-4edf:europe-west3:pg-01-45-53-champ-admin-portal-tuc-01",
+        "createTime": "2021-09-29T09:42:48.907Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.66.11",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-45-53-champ-admin-portal-tuc-01",
+        "project": "tecfo-psql-blue-tuc-4edf",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tuc-4edf/instances/pg-01-45-53-champ-admin-portal-tuc-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=09135232-708a-46b4-bd18-21a367c05d2b",
+            "createTime": "2021-09-29T09:43:46.386Z",
+            "expirationTime": "2031-09-27T09:44:46.386Z",
+            "instance": "pg-01-45-53-champ-admin-portal-tuc-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "b011f359565886b9ea56478d0fa330f37499af0c"
+        },
+        "serviceAccountEmailAddress": "p843283136569-0nx0e3@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "max_connections",
+                    "value": "128"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.9.102.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.10.233.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.64.10/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tuc-landing-tier-33f9/global/networks/tuc-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "54",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-f1-micro",
+            "userLabels": {
+                "coba-coria-id": "01-45-53",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-45-53-champ-admin-portal-tuc-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-45-53-champ-admin-portal-tuc-01', 'tecfo-psql-blue-tuc-4edf'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tuc-4edf:europe-west3:pg-01-45-18-cam-tuc-01",
+        "createTime": "2021-11-17T15:51:06.373Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tuc-kms-hsm-sc/locations/europe-west3/keyRings/tuc-01-43-71/cryptoKeys/tecfo-psql-blue-tuc-4edf-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.66.16",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-45-18-cam-tuc-01",
+        "project": "tecfo-psql-blue-tuc-4edf",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tuc-4edf/instances/pg-01-45-18-cam-tuc-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=8a3bdcad-867a-4663-a044-3e4861eddd37",
+            "createTime": "2021-11-17T15:52:12.242Z",
+            "expirationTime": "2031-11-15T15:53:12.242Z",
+            "instance": "pg-01-45-18-cam-tuc-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "73100134e8647634a169413968ae51ea2cb9f068"
+        },
+        "serviceAccountEmailAddress": "p843283136569-l7izcv@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "max_connections",
+                    "value": "128"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.10.233.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tuc-landing-tier-33f9/global/networks/tuc-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "44",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "14-24-14",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-45-18-cam-tuc-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-45-18-cam-tuc-01', 'tecfo-psql-blue-tuc-4edf'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tud-412e:europe-west3:test-cb2elmm-tud-west3-01",
+        "createTime": "2021-11-25T16:28:41.952Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.130.6",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "test-cb2elmm-tud-west3-01",
+        "project": "tecfo-psql-blue-tud-412e",
+        "region": "europe-west3",
+        "replicaNames": [
+            "test-cb2elmm-tud-west4-01-replica"
+        ],
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tud-412e/instances/test-cb2elmm-tud-west3-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=5b303192-c19a-451b-905a-260307311898",
+            "createTime": "2021-11-25T16:30:26.176Z",
+            "expirationTime": "2031-11-23T16:31:26.176Z",
+            "instance": "test-cb2elmm-tud-west3-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "65d7aeab282364c0e2577744e3a69231e38dfaa8"
+        },
+        "serviceAccountEmailAddress": "p1073413540204-dsa70p@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tud-landing-tier-bb9a/global/networks/tud-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "28",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "12-34-56",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-23-45-test",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'test-cb2elmm-tud-west3-01', 'tecfo-psql-blue-tud-412e'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tud-412e:europe-west3:test-tud-psql-2s2r",
+        "createTime": "2021-08-16T15:34:21.063Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.130.3",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "test-tud-psql-2s2r",
+        "project": "tecfo-psql-blue-tud-412e",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tud-412e/instances/test-tud-psql-2s2r",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=a63b5f4a-2e92-47d3-9eab-5f8f68394270",
+            "createTime": "2021-08-16T15:37:38.871Z",
+            "expirationTime": "2031-08-14T15:38:38.871Z",
+            "instance": "test-tud-psql-2s2r",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "1ccc9c60579966a8de8f3797af68f77434709d12"
+        },
+        "serviceAccountEmailAddress": "p1073413540204-2iuzwc@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 7,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "100",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tud-landing-tier-bb9a/global/networks/tud-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "maintenanceWindow": {
+                "day": 0,
+                "hour": 0,
+                "kind": "sql#maintenanceWindow"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "42",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-custom-4-26624"
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'test-tud-psql-2s2r', 'tecfo-psql-blue-tud-412e'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-tud-412e:europe-west3:pg-14-24-14-pmt-tud-01",
+        "createTime": "2021-12-07T07:45:58.956Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-tud-kms-hsm-sc/locations/europe-west3/keyRings/tud-01-43-71/cryptoKeys/tecfo-psql-blue-tud-412e-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.130.19",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-14-24-14-pmt-tud-01",
+        "project": "tecfo-psql-blue-tud-412e",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-tud-412e/instances/pg-14-24-14-pmt-tud-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=f14be341-468f-4d8d-8c93-4fe12385af3b",
+            "createTime": "2021-12-07T07:47:15.839Z",
+            "expirationTime": "2031-12-05T07:48:15.839Z",
+            "instance": "pg-14-24-14-pmt-tud-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "3531bf709def25164ff6b26c1b416a3a103e367c"
+        },
+        "serviceAccountEmailAddress": "p1073413540204-tdglnu@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "max_connections",
+                    "value": "128"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.10.233.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-tud-landing-tier-bb9a/global/networks/tud-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "34",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "14-24-14",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-14-24-14-pmt-tud-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-14-24-14-pmt-tud-01', 'tecfo-psql-blue-tud-412e'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-prd-825b:europe-west3:pg-01-45-18-cam-prod-01",
+        "createTime": "2021-12-09T09:18:30.028Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-prd-kms-hsm-sc/locations/europe-west3/keyRings/prd-01-43-71/cryptoKeys/tecfo-psql-blue-prd-825b-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.194.26",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-45-18-cam-prod-01",
+        "project": "tecfo-psql-blue-prd-825b",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-c",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-prd-825b/instances/pg-01-45-18-cam-prod-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=4a95ed1f-4406-4c63-80b7-8553cec8f3d2",
+            "createTime": "2021-12-09T09:20:27.409Z",
+            "expirationTime": "2031-12-07T09:21:27.409Z",
+            "instance": "pg-01-45-18-cam-prod-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "bdc6f2fa0ce2b839d2fab61de5d140bcf1578e70"
+        },
+        "serviceAccountEmailAddress": "p369736850744-mcj3gf@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "location": "eu",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "01:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "20",
+            "dataDiskType": "PD_SSD",
+            "databaseFlags": [
+                {
+                    "name": "cloudsql.enable_pgaudit",
+                    "value": "on"
+                },
+                {
+                    "name": "pgaudit.log",
+                    "value": "all,-read,-write"
+                }
+            ],
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.10.233.0/24"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "110.10.74.10/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.34.52.6/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-prd-landing-tier-afce/global/networks/prd-01-int-vpc01",
+                "requireSsl": true
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "49",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "14-24-14",
+                "coba-life-cycle-status": "life",
+                "coba-name": "pg-01-45-18-cam-prod-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-45-18-cam-prod-01', 'tecfo-psql-blue-prd-825b'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-01-43-71-cb3hagk-blue-dev-01",
+        "createTime": "2021-10-21T11:24:18.357Z",
+        "databaseInstalledVersion": "POSTGRES_13_5",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "failoverReplica": {
+            "available": true
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.14",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-43-71-cb3hagk-blue-dev-01",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "secondaryGceZone": "europe-west3-a",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-43-71-cb3hagk-blue-dev-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=fdede22f-8339-41f1-b30d-a29a302ff78c",
+            "createTime": "2021-10-21T11:25:57.203Z",
+            "expirationTime": "2031-10-19T11:26:57.203Z",
+            "instance": "pg-01-43-71-cb3hagk-blue-dev-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "08aa1f8d4aef8afd860c569c13887a9ac7f23bb8"
+        },
+        "serviceAccountEmailAddress": "p499968324573-7tna0s@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "REGIONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "45",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-43-71",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-43-71-cb3hagk-blue-dev-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-43-71-cb3hagk-blue-dev-01', 'tecfo-psql-blue-dev-2397'),
+(   '{
+        "backendType": "SECOND_GEN",
+        "connectionName": "tecfo-psql-blue-dev-2397:europe-west3:pg-01-43-71-pgdba-dev-01",
+        "createTime": "2022-03-22T08:34:19.045Z",
+        "databaseInstalledVersion": "POSTGRES_13_4",
+        "databaseVersion": "POSTGRES_13",
+        "diskEncryptionConfiguration": {
+            "kind": "sql#diskEncryptionConfiguration",
+            "kmsKeyName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql"
+        },
+        "diskEncryptionStatus": {
+            "kind": "sql#diskEncryptionStatus",
+            "kmsKeyVersionName": "projects/service-dev-kms-hsm-sc/locations/europe-west3/keyRings/dev-01-43-71/cryptoKeys/tecfo-psql-blue-dev-2397-sql/cryptoKeyVersions/1"
+        },
+        "gceZone": "europe-west3-b",
+        "instanceType": "CLOUD_SQL_INSTANCE",
+        "ipAddresses": [
+            {
+                "ipAddress": "10.40.2.55",
+                "type": "PRIVATE"
+            }
+        ],
+        "kind": "sql#instance",
+        "name": "pg-01-43-71-pgdba-dev-01",
+        "project": "tecfo-psql-blue-dev-2397",
+        "region": "europe-west3",
+        "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/tecfo-psql-blue-dev-2397/instances/pg-01-43-71-pgdba-dev-01",
+        "serverCaCert": {
+            "certSerialNumber": "0",
+            "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=400d1736-615f-4db9-9b03-b9e2af722586",
+            "createTime": "2022-03-22T08:35:33.53Z",
+            "expirationTime": "2032-03-19T08:36:33.53Z",
+            "instance": "pg-01-43-71-pgdba-dev-01",
+            "kind": "sql#sslCert",
+            "sha1Fingerprint": "4548bf50ff581acadb5e9b7fad85ce278cedf5a4"
+        },
+        "serviceAccountEmailAddress": "p499968324573-wq4h48@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+        "settings": {
+            "activationPolicy": "ALWAYS",
+            "availabilityType": "ZONAL",
+            "backupConfiguration": {
+                "backupRetentionSettings": {
+                    "retainedBackups": 30,
+                    "retentionUnit": "COUNT"
+                },
+                "enabled": true,
+                "kind": "sql#backupConfiguration",
+                "pointInTimeRecoveryEnabled": true,
+                "replicationLogArchivingEnabled": true,
+                "startTime": "00:00",
+                "transactionLogRetentionDays": 7
+            },
+            "dataDiskSizeGb": "10",
+            "dataDiskType": "PD_SSD",
+            "ipConfiguration": {
+                "authorizedNetworks": [
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.43.101/32"
+                    },
+                    {
+                        "kind": "sql#aclEntry",
+                        "value": "140.8.42.62/32"
+                    }
+                ],
+                "ipv4Enabled": false,
+                "privateNetwork": "projects/clof-dev-landing-tier-6de1/global/networks/dev-01-int-vpc01"
+            },
+            "kind": "sql#settings",
+            "locationPreference": {
+                "kind": "sql#locationPreference",
+                "zone": "europe-west3-b"
+            },
+            "pricingPlan": "PER_USE",
+            "replicationType": "SYNCHRONOUS",
+            "settingsVersion": "7",
+            "storageAutoResize": true,
+            "storageAutoResizeLimit": "0",
+            "tier": "db-g1-small",
+            "userLabels": {
+                "coba-coria-id": "01-43-71",
+                "coba-life-cycle-status": "commission",
+                "coba-name": "pg-01-43-71-pgdba-dev-01",
+                "coba-network-zone": "blue"
+            }
+        },
+        "state": "RUNNABLE"
+    }', current_timestamp, 'pg-01-43-71-pgdba-dev-01', 'tecfo-psql-blue-dev-2397');

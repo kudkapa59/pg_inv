@@ -1,0 +1,89 @@
+create schema if not exists instance_infos;
+set search_path = 'instance_infos';
+
+drop table if exists json_data cascade;
+create table json_data (
+	instance_name text,
+    project text,
+	json json,
+	scan_date timestamp,
+    inconsistent boolean
+);
+alter table json_data add primary key (instance_name, project, scan_date);
+
+drop table if exists sql_projects;
+create table sql_projects (
+	p_alias text,
+	p_name text,
+	p_id text,
+	p_number numeric,
+	ip_range text
+);
+insert into sql_projects values
+('blue-dev', 'tecfo-psql-blue-dev', 'tecfo-psql-blue-dev-2397', 499968324573, '10.40.2.0/24'),
+('blue-tuc', 'tecfo-psql-blue-tuc', 'tecfo-psql-blue-tuc-4edf', 843283136569, '10.40.66.0/24'),
+('blue-tud', 'tecfo-psql-blue-tud', 'tecfo-psql-blue-tud-412e', 1073413540204, '10.40.130.0/24'),
+('blue-prd', 'tecfo-psql-blue-prd', 'tecfo-psql-blue-prd-825b', 369736850744, '10.40.194.0/24')
+;
+
+drop table if exists sql_instances cascade;
+create table sql_instances (
+    create_time timestamp,
+	sub_version text,
+	version text,
+	zone text,
+    secondary_zone text,
+	type text,
+	ip_address text,
+	master_instance text,
+	instance_name text,
+	project text,
+	region text,
+	ssl_expiration_time timestamp,
+	available_type text,
+	retained_backups numeric,
+	backups_enabled boolean,
+	pit_reco_enabled boolean,
+	replication_log_arch boolean,
+	log_retention_days numeric,
+	disk_size_gb numeric,
+	disk_type text,
+	replica_enabled boolean,
+	replica_type text,
+	auto_resize boolean,
+	auto_resize_limit numeric,
+	tier text,
+	cpu text,
+	mem_mb text,
+	--customer_id text,
+    --coba_managed_service text,    
+	--lifecycle_status text,
+	--coba_name text,
+    user_labels json,    
+	status text,
+	scan_date timestamp
+);
+alter table sql_instances add primary key (instance_name,project,scan_date);
+
+create or replace view json_data_latest as
+	with latest as (
+		select instance_name, max(scan_date) as max_scan_date
+		from json_data
+        WHERE scan_date = (select max(scan_date) from json_data)
+		group by instance_name)
+	select jd.*
+	from json_data jd, latest l
+	where jd.instance_name = l.instance_name
+	and jd.scan_date = l.max_scan_date;
+
+create or replace view sql_instances_latest as
+	with latest as (
+		select instance_name, project, max(scan_date) as max_scan_date
+		from sql_instances
+        WHERE scan_date = (select max(scan_date) from sql_instances)
+		group by instance_name, project)
+	select si.*
+	from sql_instances si, latest l
+	where si.instance_name = l.instance_name
+	and si.project = l.project
+	and si.scan_date = l.max_scan_date;
