@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/dashboard/target
+/dashboard/node_modules
+/dashboard/.pnp
+.pnp.js
+
+# testing
+/dashboard/coverage
+
+# next.js
+/dashboard/.next/
+/dashboard/out/
+
+# production
+/dashboard/build/app
+
+# misc
+.DS_Store
+*.pem
+*.pfx
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env
+
+# typescript
+*.tsbuildinfo
+
+# logs
+/data_loading/log/**
+
+# tmp files
+/data_loading/tmp/**
