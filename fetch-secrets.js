@@ -1,6 +1,6 @@
 const {React} = require("@react");
-#const { DefaultAzureCredential } = require("@azure/identity");
-#const { SecretClient } = require("@azure/keyvault-secrets");
+//const { DefaultAzureCredential } = require("@azure/identity");
+//const { SecretClient } = require("@azure/keyvault-secrets");
 
 async function fetchSecrets() {
   const credential = new DefaultAzureCredential();
