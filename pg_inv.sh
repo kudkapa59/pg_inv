@@ -33,6 +33,7 @@ load_env() {
     set -a
     # loading values from ".env" into environment
     #source <(cat .env | sed -e '/^#/d;/^\s*$/d' -e "s/'/'\\\''/g" -e "s/=\(.*\)/='\1'/g") # regexp e.g. for filtering comment lines
+    npm i
     eval $(node fetch-secrets.js)
     set +a
 }
