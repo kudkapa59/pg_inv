@@ -3,13 +3,13 @@ const { DefaultAzureCredential } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
 //import { SecretClient } from "@azure/keyvault-secrets";
 
-//async function fetchSecrets() {
-const credential = new DefaultAzureCredential();
-const url = process.env.AZURE_KEY_VAULT_URL;
-console.log(`url = ${url}`)
-console.log("Check")
-const client = new SecretClient(url, credential);
-
+async function fetchSecrets() {
+  const credential = new DefaultAzureCredential();
+  const url = process.env.AZURE_KEY_VAULT_URL;
+  console.log(`url = ${url}`)
+  console.log("Check")
+  const client = new SecretClient(url, credential);
+}
   // try {
   //   // console.log(`${}`)
   //   for await (const secretProperties of client.listPropertiesOfSecrets()) {
