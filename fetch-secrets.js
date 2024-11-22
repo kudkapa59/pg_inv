@@ -9,19 +9,20 @@ async function fetchSecrets() {
   console.log(`url = ${url}`)
   console.log("Check")
   const client = new SecretClient(url, credential);
-}
-  try {
-    // console.log(`${}`)
-    for await (const secretProperties of client.listPropertiesOfSecrets()) {
-      const secretName = secretProperties.name;
-      // context.log(`Secretname ${secretName}`)
-      const secret = await client.getSecret(secretName);
-      // console.log(`${secretName}=${secret.value}`);
-    }
-  } catch (error) {
-    console.error("Error fetching secrets:", error);
-    process.exit(1);
-  }
-//}
 
-//fetchSecrets();
+  // try {
+  //   // console.log(`${}`)
+  //   for await (const secretProperties of client.listPropertiesOfSecrets()) {
+  //     const secretName = secretProperties.name;
+  //     // context.log(`Secretname ${secretName}`)
+  //     const secret = await client.getSecret(secretName);
+  //     // console.log(`${secretName}=${secret.value}`);
+  //   }
+  // } catch (error) {
+  //   console.error("Error fetching secrets:", error);
+  //   process.exit(1);
+  // }
+  
+}
+
+fetchSecrets();
