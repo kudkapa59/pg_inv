@@ -1,9 +1,10 @@
-//const {React} = require("@react");
-const { DefaultAzureCredential } = require("@azure/identity");
-const { SecretClient } = require("@azure/keyvault-secrets");
+import { DefaultAzureCredential } from "@azure/identity";
+//const { DefaultAzureCredential } = require("@azure/identity");
+// const { SecretClient } = require("@azure/keyvault-secrets");
+import { SecretClient } from "@azure/keyvault-secrets";
 
 async function fetchSecrets() {
-  //const credential = new DefaultAzureCredential();
+  const credential = new DefaultAzureCredential();
   //const vaultName = process.env.AZURE_KEYVAULT_NAME;
   //console.log(credential)
   const url = process.env.AZURE_KEY_VAULT_URL;
