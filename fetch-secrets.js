@@ -5,8 +5,9 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 async function fetchSecrets() {
   const credential = new DefaultAzureCredential();
   //const vaultName = process.env.AZURE_KEYVAULT_NAME;
+  console.log(credential)
   const url = process.env.AZURE_KEY_VAULT_URL;
-
+  console.log(url)
   const client = new SecretClient(url, credential);
 
   try {
