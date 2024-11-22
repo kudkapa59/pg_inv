@@ -7,14 +7,15 @@ async function fetchSecrets() {
   //const vaultName = process.env.AZURE_KEYVAULT_NAME;
   //console.log(credential)
   const url = process.env.AZURE_KEY_VAULT_URL;
-  context.log(url)
+  console.log(`url = ${url}`)
+  console.log("Check")
   const client = new SecretClient(url, credential);
 
   try {
     // console.log(`${}`)
     for await (const secretProperties of client.listPropertiesOfSecrets()) {
       const secretName = secretProperties.name;
-      context.log(secretName)
+      context.log(`Secretname ${secretName}`)
       // const secret = await client.getSecret(secretName);
       // console.log(`${secretName}=${secret.value}`);
     }
