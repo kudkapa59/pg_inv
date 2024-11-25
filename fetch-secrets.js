@@ -19,7 +19,12 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 
 async function fetchSecrets() {
-  const credential = new DefaultAzureCredential();
+    const userAssignedClientId = "2babc7aa-8f50-4072-a8ed-f73857875e61";
+  
+  // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
+  const credential = new DefaultAzureCredential({
+    managedIdentityClientId: userAssignedClientId
+  });
 
   // const credential = new ManagedIdentityCredential('2babc7aa-8f50-4072-a8ed-f73857875e61');
   const url = process.env.AZURE_KEY_VAULT_URL;
