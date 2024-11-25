@@ -22,18 +22,25 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 async function fetchSecrets() {
     const userAssignedClientId = process.env.AZURE_CLIENT_ID;
   
-  // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
-  const credential = new DefaultAzureCredential({
-    managedIdentityClientId: userAssignedClientId
-  });
-
-  // const credential = new ManagedIdentityCredential('2babc7aa-8f50-4072-a8ed-f73857875e61');
+    // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
+    const credential = new DefaultAzureCredential({
+      managedIdentityClientId: userAssignedClientId
+    });
+  
+  // When an access token is requested, the chain will try each
+  // credential in order, stopping when one provides a token
+  const firstCredential = new ClientSecretCredential('ee823bd5-e039-49c0-8544-b2564018b1e8', '2babc7aa-8f50-4072-a8ed-f73857875e61', '');
+  const secondCredential = new EnvironmentCredential();
+  const credentialChain = new ChainedTokenCredential(firstCredential, secondCredential);
   const url = process.env.AZURE_KEY_VAULT_URL;
-  const client = new SecretClient(url, credential);
+  // const client = new KeyClient(url, credentialChain);
+  // const credential = new ManagedIdentityCredential('2babc7aa-8f50-4072-a8ed-f73857875e61');
+ 
+  const client = new SecretClient(url, credentialChain);
 
   // Get secret
-  const secret = await client.getSecret("client-id");
-  console.log(secret)
+  // const secret = await client.getSecret("client-id");
+  // console.log(secret)
 
   // // List the secrets we have, by page
   // console.log("Listing secrets by page");
