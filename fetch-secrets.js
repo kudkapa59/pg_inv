@@ -4,7 +4,7 @@ const {
   ChainedTokenCredential
 } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
-import 'dotenv/config'
+//import 'dotenv/config'
 //import { SecretClient } from "@azure/keyvault-secrets";
 
 async function fetchSecrets() {
