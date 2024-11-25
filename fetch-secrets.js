@@ -20,12 +20,12 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 
 async function fetchSecrets() {
-    const userAssignedClientId = process.env.AZURE_CLIENT_ID;
+    // const userAssignedClientId = process.env.AZURE_CLIENT_ID;
   
-    // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
-    const credential = new DefaultAzureCredential({
-      managedIdentityClientId: userAssignedClientId
-    });
+    // // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
+    // const credential = new DefaultAzureCredential({
+    //   managedIdentityClientId: userAssignedClientId
+    // });
   
   // When an access token is requested, the chain will try each
   // credential in order, stopping when one provides a token
