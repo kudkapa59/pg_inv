@@ -11,7 +11,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 
 function withSystemAssignedManagedIdentityCredential() {
-  const credential = new ManagedIdentityCredential();
+  const credential = new ManagedIdentityCredential('2babc7aa-8f50-4072-a8ed-f73857875e61');
   const url = process.env.AZURE_KEY_VAULT_URL;
   const client = new SecretClient(url, credential);
 }
