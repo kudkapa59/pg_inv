@@ -1,5 +1,6 @@
 //import { DefaultAzureCredential } from "@azure/identity";
 const {
+  DefaultAzureCredential,
   ClientSecretCredential,
   ChainedTokenCredential,
   EnvironmentCredential,
