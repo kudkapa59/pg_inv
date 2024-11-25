@@ -3,8 +3,9 @@ const {
   DefaultAzureCredential,
   ClientSecretCredential,
   ChainedTokenCredential,
-  EnvironmentCredential,
-  ManagedIdentityCredential
+  EnvironmentCredential
+  // ,
+  // ManagedIdentityCredential
 } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
 //import 'dotenv/config'
@@ -19,7 +20,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 
 async function fetchSecrets() {
-    const userAssignedClientId = "2babc7aa-8f50-4072-a8ed-f73857875e61";
+    const userAssignedClientId = process.env.AZURE_CLIENT_ID;
   
   // Initialize DefaultAzureCredential with options if using a user-assigned managed identity
   const credential = new DefaultAzureCredential({
