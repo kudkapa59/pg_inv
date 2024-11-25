@@ -1,7 +1,8 @@
 //import { DefaultAzureCredential } from "@azure/identity";
 const {
   ClientSecretCredential,
-  ChainedTokenCredential
+  ChainedTokenCredential,
+  EnvironmentCredential
 } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
 //import 'dotenv/config'
