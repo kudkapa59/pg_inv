@@ -7,3 +7,5 @@ command = bash pg_inv.sh
 ./pg_inv.sh data_loading -i
 #install the dashboards
 ./pg_inv.sh dashboard -i
+#testing the data_loading
+./pg_inv.sh data_loading -s
