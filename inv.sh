@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./pg_inv.sh install -i\
+./pg_inv.sh install -i
 #install the database schema
 #./pg_inv.sh database -i
 #install the data_loading (creates the cronjobs)
