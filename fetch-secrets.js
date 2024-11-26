@@ -30,7 +30,7 @@ async function fetchSecrets() {
   // When an access token is requested, the chain will try each
   // credential in order, stopping when one provides a token
   const firstCredential = new DefaultAzureCredential({
-    managedIdentityClientId: process.env.AZURE_CLIENT_ID,
+    managedIdentityClientId: '2babc7aa-8f50-4072-a8ed-f73857875e61',
   });
   const secondCredential = new EnvironmentCredential();
   const credentialChain = new ChainedTokenCredential(firstCredential, secondCredential);
