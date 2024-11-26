@@ -9,3 +9,4 @@
 # ./pg_inv.sh dashboard -i
 #testing the data_loading
 #./pg_inv.sh data_loading -s
+./pg_inv.sh dev -s
