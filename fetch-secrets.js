@@ -30,7 +30,7 @@ async function fetchSecrets() {
   // When an access token is requested, the chain will try each
   // credential in order, stopping when one provides a token
   const firstCredential = new DefaultAzureCredential({
-    managedIdentityClientId: "2babc7aa-8f50-4072-a8ed-f73857875e61",
+    managedIdentityClientId: process.env.AZURE_CLIENT_ID,
   });
   const secondCredential = new EnvironmentCredential();
   const credentialChain = new ChainedTokenCredential(firstCredential, secondCredential);
@@ -58,12 +58,12 @@ async function fetchSecrets() {
 
   //   // List the secrets we have, all at once
   // console.log("Listing secrets all at once");
-  // for await (const secretProperties of client.listPropertiesOfSecrets()) {
-  //   if (secretProperties.enabled) {
-  //     const secret = await client.getSecret(secretProperties.name);
-  //     console.log("secret: ", secret);
-  //   }
-  // }
+  for await (const secretProperties of client.listPropertiesOfSecrets()) {
+    if (secretProperties.enabled) {
+      const secret = await client.getSecret(secretProperties.name);
+      console.log("secret: ", secret);
+    }
+  }
   
 }
 
