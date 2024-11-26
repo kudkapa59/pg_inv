@@ -34,7 +34,7 @@ async function fetchSecrets() {
   });
   const secondCredential = new EnvironmentCredential();
   const credentialChain = new ChainedTokenCredential(firstCredential, secondCredential);
-  const url = process.env.AZURE_KEY_VAULT_URL;
+  const url = 'https://kv-013448-gwc-dev-01ef17.vault.azure.net/';
   // const client = new KeyClient(url, credentialChain);
   // const credential = new ManagedIdentityCredential('2babc7aa-8f50-4072-a8ed-f73857875e61');
  
@@ -58,12 +58,12 @@ async function fetchSecrets() {
 
   //   // List the secrets we have, all at once
   // console.log("Listing secrets all at once");
-  for await (const secretProperties of client.listPropertiesOfSecrets()) {
-    if (secretProperties.enabled) {
-      const secret = await client.getSecret(secretProperties.name);
-      console.log("secret: ", secret);
-    }
-  }
+  // for await (const secretProperties of client.listPropertiesOfSecrets()) {
+  //   if (secretProperties.enabled) {
+  //     const secret = await client.getSecret(secretProperties.name);
+  //     console.log("secret: ", secret);
+  //   }
+  // }
   
 }
 
