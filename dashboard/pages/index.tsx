@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                     <Grid container columns={{ xs: 2, sm: 2, md: 2 }}>
                         <Grid item xs={1} sm={1} md={1} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                             <img src="google-cloud-logo.jpg" width="100%" alt="google cloud logo" />
-                            <img src="azure-cloud-logo.png" width="100%" />
+                            <img src="azure-cloud-logo.png" width="100%" alt="microsoft azure logo" />
                             {/* <img src="gcp_cloudsql.png" width="50%" /> */}
                         </Grid>
                         <Grid item xs={1} sm={1} md={1}>
