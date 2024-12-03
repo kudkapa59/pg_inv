@@ -11,5 +11,5 @@ export const pgConn = new Pool({
      password: process.env.AZURE_POSTGRESQL_PASSWORD,
      database: process.env.AZURE_POSTGRESQL_DATABASE,
      port: Number(process.env.AZURE_POSTGRESQL_PORT) ,
-     ssl: process.env.AZURE_POSTGRESQL_SSL
+     ...( process.env.AZURE_POSTGRESQL_SSL ? {ssl: { rejectUnauthorized: false }} : {})
 });
