@@ -3,7 +3,7 @@ import { Container, Typography, Divider, Grid, Box, Link } from '@mui/material'
 import Masonry from '@mui/lab/Masonry';
 import CoBaCard from '../components/CoBaCard';
 import EnvironmentOverviewCard from '../components/EnvironmentOverviewCard';
-
+//
 //
 //  Home - This file represents the root page (http://<domain.local>/)
 //  This Page contains an overview about the Product and provides contact information
