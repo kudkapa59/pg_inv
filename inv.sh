@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./pg_inv.sh install -i
+#./pg_inv.sh install -i
 ./pg_inv.sh dashboard -bs
 #install the database schema
 #./pg_inv.sh database -i
